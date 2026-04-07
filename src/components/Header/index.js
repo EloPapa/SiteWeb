@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-import { Popover } from "@headlessui/react";
+import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
 import { useTheme } from "next-themes";
 
 import Button from "../Button";
@@ -43,29 +43,31 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                     <img
                       className="h-6"
                       src={`/images/${
-                        theme === "dark" ? "moon.svg" : "sun.svg"
-                      }`}
+                        theme === "dark" ? "moon.svg" : "sun.svg"}`}
+                        alt="theme icon"
+                      
                     ></img>
                   </Button>
                 )}
 
-                <Popover.Button>
+                <PopoverButton>
                   <img
                     className="h-5"
+                    alt="menu icon"
                     src={`/images/${
                       !open
                         ? theme === "dark"
-                          ? "menu-white.svg"
-                          : "menu.svg"
+                          ? "menu.svg"
+                          : "menu-white.svg"
                         : theme === "light"
                         ? "cancel.svg"
                         : "cancel-white.svg"
                     }`}
                   ></img>
-                </Popover.Button>
+                </PopoverButton>
               </div>
             </div>
-            <Popover.Panel
+            <PopoverPanel
               className={`absolute right-0 z-10 w-11/12 p-4 ${
                 theme === "dark" ? "bg-slate-800" : "bg-white"
               } shadow-md rounded-md`}
@@ -117,7 +119,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                   </Button>
                 </div>
               )}
-            </Popover.Panel>
+            </PopoverPanel>
           </>
         )}
       </Popover>
