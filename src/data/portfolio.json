@@ -1,0 +1,13 @@
+{"name":"Eloïse","headerTaglineOne":"COuCoU 👋","headerTaglineTwo":"I'm Eloïse Bergeron - curious",
+"headerTaglineThree":"student, gymnast and horsewoman",
+"headerTaglineFour":" based in Montreal, Canada.",
+"showCursor":true,"showBlog":true,"darkMode":true,"showResume":true,
+"socials":[{"id":"1","title":"Github","link":"https://github.com/"},{"id":"2","title":"Youtube","link":"https://www.youtube.com/"},
+{"id":"3","title":"Email","link":"mailto:ericbergeron2000@gmail.com"}],
+"projects":[{"id":"1","title":"Horse Riding","description":"Casual session","imageSrc":"","url":"http://adresseInternet.com/"},
+{"id":"2","title":"Horse Riding Two","description":"Competition","imageSrc":"","url":"http://adresseInternet.com/"},
+{"id":"3","title":"Gymnastics","description":"Training Sessions","imageSrc":"","url":"http://adresseInternet.com/"},
+{"id":"4","title":"Gymnastics","description":"Competitions","imageSrc":"","url":"http://adresseInternet.com/"},
+{"id":"5","title":"School Project 1","description":"Personnal Web Site","imageSrc":"","url":"http://adresseInternet.com/"},
+{"id":"6","title":"School Project 2","description":"Web Application Development","imageSrc":"","url":"http://adresseInternet.com/"}],
+"aboutYou":"BlaBla"}
