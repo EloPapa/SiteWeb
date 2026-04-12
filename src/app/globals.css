@@ -2,12 +2,12 @@
 @variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #fffffff0;
+  --background: #ffffff;
   --foreground: #000000;
 }
 
 .dark {
-  --background: #05000f;
+  --background: #0f172a;
   --foreground: #ffffff;
 }
 

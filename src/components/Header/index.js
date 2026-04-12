@@ -119,9 +119,8 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
 
       {/* 💻 DESKTOP */}
       <div
-        className="hidden tablet:flex justify-between items-center mt-10 sticky top-0 z-10
-        bg-white dark:bg-slate-900
-        text-black dark:text-white"
+        className="hidden tablet:flex justify-between items-center mt-10 sticky top-0 z-10"
+        style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
       >
         <h1
           onClick={() => router.push("/")}
