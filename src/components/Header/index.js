@@ -8,24 +8,46 @@ import { useTheme } from "next-themes";
 import Button from "../Button";
 import data from "../../data/portfolio.json";
 
+// ✅ Définis HORS de Header pour éviter le re-mount et l'erreur d'hydration
+const ThemeButton = ({ darkMode, mounted, currentTheme, onToggle }) => {
+  if (!darkMode || !mounted) return null;
+  return (
+    <Button onClick={onToggle}>
+      <img
+        className="h-6"
+        src={`/images/${currentTheme === "dark" ? "moon.svg" : "sun.svg"}`}
+        alt="theme icon"
+      />
+    </Button>
+  );
+};
+
+const MenuIcon = ({ open, mounted, currentTheme }) => {
+  // Placeholder de même taille pendant le SSR pour éviter la mismatch DOM
+  if (!mounted) return <span className="h-5 w-5 block" />;
+  const src = !open
+    ? currentTheme === "light" ? "menu-white.svg" : "menu-dark.svg"
+    : currentTheme === "dark" ? "cancel-white.svg" : "cancel.svg";
+  return <img className="h-5" alt="menu icon" src={`/images/${src}`} />;
+};
+
 const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
   const router = useRouter();
   const { theme, setTheme, resolvedTheme } = useTheme();
-
   const [mounted, setMounted] = useState(false);
+
   const { name, showBlog, showResume, darkMode } = data;
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const currentTheme = theme || resolvedTheme;
+  // "dark" côté serveur pour correspondre au defaultTheme de providers.js
+  const currentTheme = mounted ? (theme || resolvedTheme) : "dark";
 
   const toggleTheme = () => {
     setTheme(currentTheme === "dark" ? "light" : "dark");
   };
-
-  if (!mounted) return null;
 
   return (
     <>
@@ -42,42 +64,21 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               </h1>
 
               <div className="flex items-center gap-2">
-                {darkMode && (
-                  <Button onClick={toggleTheme}>
-                    <img
-                      className="h-6"
-                      src={`/images/${
-                        currentTheme === "dark" ? "moon.svg" : "sun.svg"
-                      }`}
-                      alt="theme icon"
-                    />
-                  </Button>
-                )}
-
+                <ThemeButton
+                  darkMode={darkMode}
+                  mounted={mounted}
+                  currentTheme={currentTheme}
+                  onToggle={toggleTheme}
+                />
                 <PopoverButton>
-                  <img
-                    className="h-5"
-                    alt="menu icon"
-                    src={`/images/${
-                      !open
-                        ? currentTheme === "light"
-                          ? "menu-white.svg"
-                          : "menu-dark.svg"
-                        : currentTheme === "dark"
-                        ? "cancel-white.svg"
-                        : "cancel.svg"
-                    }`}
-                  />
+                  <MenuIcon open={open} mounted={mounted} currentTheme={currentTheme} />
                 </PopoverButton>
               </div>
             </div>
 
             <PopoverPanel
-              className={`absolute right-2 z-10 w-40 p-4 rounded-md shadow-md ${
-                currentTheme === "dark"
-                  ? "bg-slate-800 text-white"
-                  : "bg-white text-black"
-              }`}
+              className="absolute right-2 z-10 w-40 p-4 rounded-md shadow-md"
+              style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
             >
               <div className="flex flex-col gap-2">
                 {!isBlog ? (
@@ -85,9 +86,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                     <Button onClick={handleWorkScroll}>Work</Button>
                     <Button onClick={handleAboutScroll}>About</Button>
                     {showBlog && (
-                      <Button onClick={() => router.push("/blog")}>
-                        Blog
-                      </Button>
+                      <Button onClick={() => router.push("/blog")}>Blog</Button>
                     )}
                   </>
                 ) : (
@@ -95,20 +94,12 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 )}
 
                 {showResume && (
-                  <Button
-                    onClick={() =>
-                      window.open("mailto:ericbergeron2000@gmail.com")
-                    }
-                  >
+                  <Button onClick={() => window.open("mailto:ericbergeron2000@gmail.com")}>
                     Resume
                   </Button>
                 )}
 
-                <Button
-                  onClick={() =>
-                    window.open("mailto:ericbergeron2000@gmail.com")
-                  }
-                >
+                <Button onClick={() => window.open("mailto:ericbergeron2000@gmail.com")}>
                   Contact
                 </Button>
               </div>
@@ -146,25 +137,16 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
             <Button onClick={() => router.push("/resume")}>Resume</Button>
           )}
 
-          <Button
-            onClick={() =>
-              window.open("mailto:ericbergeron2000@gmail.com")
-            }
-          >
+          <Button onClick={() => window.open("mailto:ericbergeron2000@gmail.com")}>
             Contact
           </Button>
 
-          {darkMode && (
-            <Button onClick={toggleTheme}>
-              <img
-                className="h-6"
-                src={`/images/${
-                  currentTheme === "dark" ? "moon.svg" : "sun.svg"
-                }`}
-                alt="theme icon"
-              />
-            </Button>
-          )}
+          <ThemeButton
+            darkMode={darkMode}
+            mounted={mounted}
+            currentTheme={currentTheme}
+            onToggle={toggleTheme}
+          />
         </div>
       </div>
     </>
@@ -172,3 +154,4 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
 };
 
 export default Header;
+
