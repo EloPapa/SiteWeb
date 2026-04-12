@@ -1,6 +1,8 @@
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import Cursor from "@/components/Cursor";
+import Providers from "./providers"; //
+//import { ThemeProvider } from "next-themes";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,11 +24,17 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">
-      <Cursor />  
-      {children}
-      </body>
+    <body className="min-h-full flex flex-col">
+      <Providers>
+        
+        <div className="min-h-full">
+          <Cursor />
+          {children}
+        </div>
+      </Providers>
+    </body>
     </html>
   );
 }

@@ -6,17 +6,23 @@ import { stagger } from "../animations";
 import Head from "next/head";
 import Link from "next/link";
 
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Button from "../components/Button";
+import Socials from "../components/Socials";
+import WorkCard from "../components/WorkCard";
+
 // Local Data
 import data from "../data/portfolio.json";
 
 // Dynamically import client-only components
-const Button = dynamic(() => import("../components/Button"), { ssr: false });
+//const Button = dynamic(() => import("../components/Button"), { ssr: false });
 const Cursor = dynamic(() => import("../components/Cursor"), { ssr: false });
-const Footer = dynamic(() => import("../components/Footer"), { ssr: false });
-const Header = dynamic(() => import("../components/Header"), { ssr: false });
+//const Footer = dynamic(() => import("../components/Footer"), { ssr: false });
+//const Header = dynamic(() => import("../components/Header"), { ssr: false });
 const ServiceCard = dynamic(() => import("../components/ServiceCard"), { ssr: false });
-const Socials = dynamic(() => import("../components/Socials"), { ssr: false });
-const WorkCard = dynamic(() => import("../components/WorkCard"), { ssr: false });
+//const Socials = dynamic(() => import("../components/Socials"), { ssr: false });
+//const WorkCard = dynamic(() => import("../components/WorkCard"), { ssr: false });
 
 export default function Home() {
   // Ref
@@ -98,7 +104,7 @@ export default function Home() {
           <Socials className="mt-2 laptop:mt-5" />
         </div>
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
-          <h1 className="text-2xl text-bold">Work.</h1>
+          <h1 className="text-2xl text-bold">Passions.</h1>
 
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
             {data.projects.map((project) => (
