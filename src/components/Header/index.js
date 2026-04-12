@@ -107,7 +107,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 <Button onClick={handleAboutScroll}>About</Button>
                 <Button
                   onClick={() =>
-                    window.open("mailto:ericbergeron2000@gmail.com")
+                    window.open("mailto:sharky2000_822@hotmail.com")
                   }
                 >
                   Contact
@@ -154,7 +154,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
 
           <Button
             onClick={() =>
-              window.open("mailto:ericbergeron2000@gmail.com")
+              window.open("mailto:sharky2000_822@hotmail.com")
             }
           >
             Contact
