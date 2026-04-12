@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @variant dark (&:where(.dark, .dark *));
 
+* {
+  cursor: default !important;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #000000;

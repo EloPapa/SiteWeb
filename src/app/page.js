@@ -17,7 +17,7 @@ import data from "../data/portfolio.json";
 
 // Dynamically import client-only components
 //const Button = dynamic(() => import("../components/Button"), { ssr: false });
-const Cursor = dynamic(() => import("../components/Cursor"), { ssr: false });
+//const Cursor = dynamic(() => import("../components/Cursor"), { ssr: false });
 //const Footer = dynamic(() => import("../components/Footer"), { ssr: false });
 //const Header = dynamic(() => import("../components/Header"), { ssr: false });
 const ServiceCard = dynamic(() => import("../components/ServiceCard"), { ssr: false });
@@ -59,8 +59,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={`relative ${data.showCursor && "cursor-none"}`}>
-      {data.showCursor && <Cursor />}
+    <div className="relative">      
       <Head>
         <title>{data.name}</title>
       </Head>

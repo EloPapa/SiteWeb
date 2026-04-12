@@ -8,13 +8,12 @@ import { useTheme } from "next-themes";
 import Button from "../Button";
 import data from "../../data/portfolio.json";
 
-// ✅ Définis HORS de Header pour éviter le re-mount et l'erreur d'hydration
 const ThemeButton = ({ darkMode, mounted, currentTheme, onToggle }) => {
   if (!darkMode || !mounted) return null;
   return (
     <Button onClick={onToggle}>
       <img
-        className="h-6"
+        className="h-6 cursor-default"
         src={`/images/${currentTheme === "dark" ? "moon.svg" : "sun.svg"}`}
         alt="theme icon"
       />
@@ -23,12 +22,17 @@ const ThemeButton = ({ darkMode, mounted, currentTheme, onToggle }) => {
 };
 
 const MenuIcon = ({ open, mounted, currentTheme }) => {
-  // Placeholder de même taille pendant le SSR pour éviter la mismatch DOM
   if (!mounted) return <span className="h-5 w-5 block" />;
   const src = !open
     ? currentTheme === "light" ? "menu-white.svg" : "menu-dark.svg"
     : currentTheme === "dark" ? "cancel-white.svg" : "cancel.svg";
-  return <img className="h-5" alt="menu icon" src={`/images/${src}`} />;
+  return (
+    <img
+      className="h-5 cursor-default"
+      alt="menu icon"
+      src={`/images/${src}`}
+    />
+  );
 };
 
 const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
@@ -42,7 +46,6 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
     setMounted(true);
   }, []);
 
-  // "dark" côté serveur pour correspondre au defaultTheme de providers.js
   const currentTheme = mounted ? (theme || resolvedTheme) : "dark";
 
   const toggleTheme = () => {
@@ -58,7 +61,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
             <div className="flex items-center justify-between p-2">
               <h1
                 onClick={() => router.push("/")}
-                className="font-medium cursor-pointer"
+                className="font-medium cursor-default"
               >
                 {name}.
               </h1>
@@ -70,7 +73,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                   currentTheme={currentTheme}
                   onToggle={toggleTheme}
                 />
-                <PopoverButton>
+                <PopoverButton className="cursor-default">
                   <MenuIcon open={open} mounted={mounted} currentTheme={currentTheme} />
                 </PopoverButton>
               </div>
@@ -80,28 +83,12 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               className="absolute right-2 z-10 w-40 p-4 rounded-md shadow-md"
               style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
             >
-              <div className="flex flex-col gap-2">
-                {!isBlog ? (
-                  <>
-                    <Button onClick={handleWorkScroll}>Work</Button>
+              <div className="flex flex-col gap-2">              
+                    <Button onClick={handleWorkScroll}>Passions</Button>
                     <Button onClick={handleAboutScroll}>About</Button>
-                    {showBlog && (
-                      <Button onClick={() => router.push("/blog")}>Blog</Button>
-                    )}
-                  </>
-                ) : (
-                  <Button onClick={() => router.push("/")}>Home</Button>
-                )}
-
-                {showResume && (
-                  <Button onClick={() => window.open("mailto:ericbergeron2000@gmail.com")}>
-                    Resume
-                  </Button>
-                )}
-
-                <Button onClick={() => window.open("mailto:ericbergeron2000@gmail.com")}>
-                  Contact
-                </Button>
+                    <Button onClick={() => window.open("mailto:ericbergeron2000@gmail.com")}>
+                      Contact
+                    </Button>
               </div>
             </PopoverPanel>
           </>
@@ -115,7 +102,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
       >
         <h1
           onClick={() => router.push("/")}
-          className="font-medium cursor-pointer"
+          className="font-medium cursor-default"
         >
           {name}.
         </h1>
@@ -154,4 +141,5 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
 };
 
 export default Header;
+
 

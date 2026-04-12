@@ -1,6 +1,5 @@
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
-import Cursor from "@/components/Cursor";
 import Providers from "./providers"; //
 //import { ThemeProvider } from "next-themes";
 
@@ -27,10 +26,8 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
     <body className="min-h-full flex flex-col">
-      <Providers>
-        
-        <div className="min-h-full">
-          <Cursor />
+      <Providers>        
+        <div className="min-h-full">          
           {children}
         </div>
       </Providers>
