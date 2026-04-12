@@ -15,17 +15,9 @@ import WorkCard from "../components/WorkCard";
 // Local Data
 import data from "../data/portfolio.json";
 
-// Dynamically import client-only components
-//const Button = dynamic(() => import("../components/Button"), { ssr: false });
-//const Cursor = dynamic(() => import("../components/Cursor"), { ssr: false });
-//const Footer = dynamic(() => import("../components/Footer"), { ssr: false });
-//const Header = dynamic(() => import("../components/Header"), { ssr: false });
 const ServiceCard = dynamic(() => import("../components/ServiceCard"), { ssr: false });
-//const Socials = dynamic(() => import("../components/Socials"), { ssr: false });
-//const WorkCard = dynamic(() => import("../components/WorkCard"), { ssr: false });
 
 export default function Home() {
-  // Ref
   const workRef = useRef();
   const aboutRef = useRef();
   const textOne = useRef();
@@ -33,7 +25,6 @@ export default function Home() {
   const textThree = useRef();
   const textFour = useRef();
 
-  // Handling Scroll
   const handleWorkScroll = () => {
     window.scrollTo({
       top: workRef.current.offsetTop,
@@ -59,7 +50,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative">      
+    <div className="relative">
       <Head>
         <title>{data.name}</title>
       </Head>
@@ -67,11 +58,13 @@ export default function Home() {
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
 
+      {/* Header is OUTSIDE the container so it spans full width */}
+      <Header
+        handleWorkScroll={handleWorkScroll}
+        handleAboutScroll={handleAboutScroll}
+      />
+
       <div className="container mx-auto mb-10">
-        <Header
-          handleWorkScroll={handleWorkScroll}
-          handleAboutScroll={handleAboutScroll}
-        />
         <div className="laptop:mt-20 mt-10">
           <div className="mt-5">
             <h1
@@ -102,6 +95,7 @@ export default function Home() {
 
           <Socials className="mt-2 laptop:mt-5" />
         </div>
+
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
           <h1 className="text-2xl text-bold">Passions.</h1>
 
@@ -117,8 +111,8 @@ export default function Home() {
             ))}
           </div>
         </div>
-        
-        {/* This button should not go into production */}
+
+        {/* Dev-only edit button */}
         {process.env.NODE_ENV === "development" && (
           <div className="fixed bottom-5 right-5">
             <Link href="/edit">
@@ -126,12 +120,14 @@ export default function Home() {
             </Link>
           </div>
         )}
+
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
           <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
           <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
             {data.aboutYou}
           </p>
         </div>
+
         <Footer />
       </div>
     </div>
