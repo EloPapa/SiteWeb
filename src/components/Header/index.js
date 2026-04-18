@@ -9,7 +9,7 @@ import Button from "../Button";
 import data from "../../data/portfolio.json";
 
 const GRADIENT =
-  "linear-gradient(to right, #0d0d1a 0%, #1a0d2e 30%, #2d0a3a 50%, #1a0d2e 70%, #0d0d1a 100%)";
+  "linear-gradient(to bottom, transparent 60%, #080810 100%), linear-gradient(to right, #080810 0%, #0f0a18 30%, #1a0d28 50%, #0f0a18 70%, #080810 100%)";
 
 const ThemeButton = ({ darkMode, mounted, currentTheme, onToggle }) => {
   if (!darkMode || !mounted) return null;
@@ -32,7 +32,7 @@ const MenuIcon = ({ open, mounted, currentTheme }) => {
       : "menu-dark.svg"
     : currentTheme === "dark"
     ? "cancel-white.svg"
-    : "cancel-white.svg"
+    : "cancel-white.svg";
   return (
     <img
       className="h-5 cursor-default"
@@ -173,5 +173,3 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
 };
 
 export default Header;
-
-

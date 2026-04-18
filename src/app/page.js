@@ -75,7 +75,7 @@ export default function Home() {
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
           <h1 className="text-2xl text-bold">Passions.</h1>
-          <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
+          <div className="mt-5 laptop:mt-10 grid grid-cols-2 tablet:grid-cols-1 gap-4 max-w-8xl mx-auto">
             {data.projects.map((project) => (
               <WorkCard
                 key={project.id}
@@ -98,7 +98,7 @@ export default function Home() {
 
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
           <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
-          <div className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
+          <div className="tablet:m-10 mt-2 text-xl laptop:text-2xl max-w-2xl leading-relaxed">
             {data.aboutYou.map((paragraph, index) => (
               <p key={index} className="mb-6">
                 {paragraph}

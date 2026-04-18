@@ -6,7 +6,9 @@ import Button from "../Button";
 
 
 
-const GRADIENT ="linear-gradient(to right, #0d0d1a 0%, #1a0d2e 30%, #2d0a3a 50%, #1a0d2e 70%, #0d0d1a 100%)";
+const GRADIENT =
+  "linear-gradient(to top, transparent 60%, #080810 100%), linear-gradient(to right, #080810 0%, #0f0a18 30%, #1a0d28 50%, #0f0a18 70%, #080810 100%)";
+
 
 const Footer = ({}) => {
   
@@ -32,6 +34,7 @@ const Footer = ({}) => {
         </div>
       </div>
       <h1 
+      
       style={{ background: GRADIENT }}
       className="text-sm text-bold mt-2 laptop:mt-10 p-2 laptop:p-0">
         Made With ❤ by{" "}
