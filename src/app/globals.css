@@ -2,7 +2,7 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --breakpoint-mob: 375px;
+  --breakpoint-mob: 500px;
   --breakpoint-tablet: 768px;
   --breakpoint-laptop: 1024px;
   --breakpoint-laptopl: 1280px;
