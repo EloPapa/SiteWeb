@@ -1,47 +1,97 @@
-{"name":"Eloïse","headerTaglineOne":"COuCoU 👋","headerTaglineTwo":"I'm Eloïse - HaPpy",
-"headerTaglineThree":"student, gymnast and horsewoman",
-"headerTaglineFour":" based in HappyLand, Canada",
-"showCursor":true,"showBlog":true,"darkMode":true,"showResume":false,
-"socials":[{"id":"1","title":"Github","link":"https://github.com/"},{"id":"2","title":"Youtube","link":"https://www.youtube.com/"},
-{"id":"3","title":"Email","link":"mailto:sharky2000_822@hotmail.com"}],
-"projects":[
-{"id":"1",
-"title":"Horse Riding",
-"description":"Casual session",
-"imageSrc": "/images/equitation/poneyclub.png",
-"url":"https://eloise-bergeron.vercel.app/"
-},
-{"id":"2",
-"title":"Horse Riding Two",
-"description":"Competition",
-"imageSrc": "/images/equitation/saut.png",
-"url":"https://eloise-bergeron.vercel.app/"
-},
-{"id":"3",
-"title":"Gymnastics",
-"description":"Training Sessions",
-"imageSrc":"/images/gymnastique/jeu_montreal.jpg",
-"url":"https://eloise-bergeron.vercel.app/"},
-{"id":"4",
-"title":"Gymnastics",
-"description":"Competitions",
-"imageSrc":"images/gymnastique/cat.png",
-"url":"https://eloise-bergeron.vercel.app/"},
-{"id":"5",
-"title":"School Project 1",
-"description":"Personnal Web Site",
-"imageSrc":"/images/ecole/web_site.png",
-"url":"https://eloise-bergeron.vercel.app/"},
-{"id":"6",
-"title":"School Project 2","description":"Web Application Development",
-"imageSrc":"/images/ecole/web_application.png",
-"url":"https://eloise-bergeron.vercel.app/"
-}],
-"aboutYou": [
-  "Meet the human version of a curious squirrel on espresso: a girl who asks so many questions that even Google would need a snack break. She's the kind of kid who doesn't just want to know what happens, but why, how, and \"what if we tried it upside down?\"",
-  "With a brain that runs faster than her sneakers (and trust me, those sneakers move), she solves problems like it's a casual hobby and you'll see her always tumbling around, and inventing new games that somehow include rules only she fully understands.",
-  "Her smile? Beautiful and permanently switched on. Rain, homework, Monday mornings—it doesn't matter. She beams like she's got a secret stash of sunshine in her pocket and she's not afraid to use it.",
-  "And just when you think she's all energy and clever comebacks, she'll surprise you by being incredibly helpful—whether it's lending a hand, cheering someone up, or organizing things better than most adults.",
-  "Basically, she's a one-girl combination of a mini scientist, a motivational coach, and a whirlwind of positivity. In short: if curiosity had a captain, intelligence had a mascot, and kindness had a spokesperson… they'd all be fighting over her."
-]
+{
+  "name": "Eloïse",
+
+  "headerTaglineOne": "COuCoU 👋",
+  "headerTaglineTwo": "I'm Eloïse - HaPpy",
+  "headerTaglineThree": "student, gymnast and horsewoman",
+  "headerTaglineFour": "based in HappyLand, Canada",
+
+  "headerTaglineOne_fr": "COuCoU 👋",
+  "headerTaglineTwo_fr": "Je suis Eloïse - HeUreUsE",
+  "headerTaglineThree_fr": "étudiante, gymnaste et cavalière",
+  "headerTaglineFour_fr": "de HappyLand, Canada",
+
+  "showCursor": true,
+  "showBlog": true,
+  "darkMode": true,
+  "showResume": false,
+
+  "socials": [
+    { "id": "1", "title": "Github", "link": "https://github.com/" },
+    { "id": "2", "title": "Youtube", "link": "https://www.youtube.com/" },
+    { "id": "3", "title": "Email", "link": "mailto:sharky2000_822@hotmail.com" }
+  ],
+
+  "projects": [
+    {
+      "id": "1",
+      "title": "Horse Riding",
+      "title_fr": "Équitation",
+      "description": "Casual session",
+      "description_fr": "Session décontractée",
+      "imageSrc": "/images/equitation/poneyclub.png",
+      "url": "https://eloise-bergeron.vercel.app/"
+    },
+    {
+      "id": "2",
+      "title": "Horse Riding Two",
+      "title_fr": "Équitation",
+      "description": "Competition",
+      "description_fr": "Compétition",
+      "imageSrc": "/images/equitation/saut.png",
+      "url": "https://eloise-bergeron.vercel.app/"
+    },
+    {
+      "id": "3",
+      "title": "Gymnastics",
+      "title_fr": "Gymnastique",
+      "description": "Training Sessions",
+      "description_fr": "Séances d'entraînement",
+      "imageSrc": "/images/gymnastique/jeu_montreal.jpg",
+      "url": "https://eloise-bergeron.vercel.app/"
+    },
+    {
+      "id": "4",
+      "title": "Gymnastics",
+      "title_fr": "Gymnastique",
+      "description": "Competitions",
+      "description_fr": "Compétitions",
+      "imageSrc": "images/gymnastique/cat.png",
+      "url": "https://eloise-bergeron.vercel.app/"
+    },
+    {
+      "id": "5",
+      "title": "School Project 1",
+      "title_fr": "Projet scolaire 1",
+      "description": "Personnal Web Site",
+      "description_fr": "Site web personnel",
+      "imageSrc": "/images/ecole/web_site.png",
+      "url": "https://eloise-bergeron.vercel.app/"
+    },
+    {
+      "id": "6",
+      "title": "School Project 2",
+      "title_fr": "Projet scolaire 2",
+      "description": "Web Application Development",
+      "description_fr": "Développement d'application web",
+      "imageSrc": "/images/ecole/web_application.png",
+      "url": "https://eloise-bergeron.vercel.app/"
+    }
+  ],
+
+  "aboutYou": [
+    "Meet the human version of a curious squirrel on espresso: a girl who asks so many questions that even Google would need a snack break. She's the kind of kid who doesn't just want to know what happens, but why, how, and \"what if we tried it upside down?\"",
+    "With a brain that runs faster than her sneakers (and trust me, those sneakers move), she solves problems like it's a casual hobby and you'll see her always tumbling around, and inventing new games that somehow include rules only she fully understands.",
+    "Her smile? Beautiful and permanently switched on. Rain, homework, Monday mornings—it doesn't matter. She beams like she's got a secret stash of sunshine in her pocket and she's not afraid to use it.",
+    "And just when you think she's all energy and clever comebacks, she'll surprise you by being incredibly helpful—whether it's lending a hand, cheering someone up, or organizing things better than most adults.",
+    "Basically, she's a one-girl combination of a mini scientist, a motivational coach, and a whirlwind of positivity. In short: if curiosity had a captain, intelligence had a mascot, and kindness had a spokesperson… they'd all be fighting over her."
+  ],
+
+  "aboutYou_fr": [
+    "Voici la version humaine d'un écureuil curieux sous caféine : une fille qui pose tellement de questions que même Google aurait besoin d'une pause collation. Le genre de kid qui ne veut pas juste savoir ce qui se passe, mais pourquoi, comment, et « et si on essayait à l'envers ? »",
+    "Avec un cerveau qui tourne plus vite que ses souliers (et croyez-moi, ces souliers bougent), elle règle les problèmes comme si c'était un passe-temps ordinaire — toujours en train de faire des galipettes et d'inventer des jeux aux règles que seule elle comprend vraiment.",
+    "Son sourire ? Magnifique et perpétuellement allumé. Pluie, devoirs, lundis matin — peu importe. Elle rayonne comme si elle avait une réserve secrète de soleil dans sa poche et qu'elle n'hésitait pas à s'en servir.",
+    "Et juste quand on croit qu'elle n'est que énergie et réparties bien senties, elle vous surprend en étant incroyablement serviable — que ce soit pour donner un coup de main, remonter le moral de quelqu'un, ou organiser les choses mieux que la plupart des adultes.",
+    "En gros, elle est à elle seule un mélange de mini-scientifique, de coach motivationnelle et de tourbillon de positivité. Bref : si la curiosité avait une capitaine, l'intelligence une mascotte et la gentillesse une porte-parole… elles se battraient toutes pour elle."
+  ]
 }

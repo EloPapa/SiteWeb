@@ -1,6 +1,7 @@
 "use client";
 
 import { ThemeProvider } from "next-themes";
+import { LanguageProvider } from "../context/LanguageContext";
 
 export default function Providers({ children }) {
   return (
@@ -10,7 +11,9 @@ export default function Providers({ children }) {
       enableSystem={true}
       disableTransitionOnChange
     >
-      {children}
+      <LanguageProvider>
+        {children}
+      </LanguageProvider>
     </ThemeProvider>
   );
 }

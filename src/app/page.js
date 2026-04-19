@@ -13,6 +13,7 @@ import Socials from "../components/Socials";
 import WorkCard from "../components/WorkCard";
 
 import data from "../data/portfolio.json";
+import { useLanguage } from "../context/LanguageContext";
 
 const ServiceCard = dynamic(() => import("../components/ServiceCard"), { ssr: false });
 
@@ -23,6 +24,8 @@ export default function Home() {
   const textTwo = useRef();
   const textThree = useRef();
   const textFour = useRef();
+
+  const { lang, t } = useLanguage();
 
   const handleWorkScroll = () => {
     window.scrollTo({ top: workRef.current.offsetTop, left: 0, behavior: "smooth" });
@@ -39,6 +42,26 @@ export default function Home() {
       { y: 0, x: 0, transform: "scale(1)" }
     );
   }, []);
+
+  // Sélectionne les taglines selon la langue
+  const taglines = lang === "fr"
+    ? [
+        data.headerTaglineOne_fr || data.headerTaglineOne,
+        data.headerTaglineTwo_fr || data.headerTaglineTwo,
+        data.headerTaglineThree_fr || data.headerTaglineThree,
+        data.headerTaglineFour_fr || data.headerTaglineFour,
+      ]
+    : [
+        data.headerTaglineOne,
+        data.headerTaglineTwo,
+        data.headerTaglineThree,
+        data.headerTaglineFour,
+      ];
+
+  // Sélectionne les paragraphes "about" selon la langue
+  const aboutParagraphs = lang === "fr"
+    ? (data.aboutYou_fr || data.aboutYou)
+    : data.aboutYou;
 
   return (
     <div className="relative">
@@ -58,30 +81,30 @@ export default function Home() {
         <div className="laptop:mt-20 mt-10">
           <div className="mt-5">
             <h1 ref={textOne} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-4/5 mob:w-full laptop:w-4/5">
-              {data.headerTaglineOne}
+              {taglines[0]}
             </h1>
             <h1 ref={textTwo} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5">
-              {data.headerTaglineTwo}
+              {taglines[1]}
             </h1>
             <h1 ref={textThree} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5">
-              {data.headerTaglineThree}
+              {taglines[2]}
             </h1>
             <h1 ref={textFour} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5">
-              {data.headerTaglineFour}
+              {taglines[3]}
             </h1>
           </div>
           <Socials className="mt-2 laptop:mt-5" />
         </div>
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
-          <h1 className="text-2xl text-bold">Passions.</h1>
+          <h1 className="text-2xl text-bold">{t.sections.passions}</h1>
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4 max-w-8xl mx-auto">
             {data.projects.map((project) => (
               <WorkCard
                 key={project.id}
                 img={project.imageSrc}
-                name={project.title}
-                description={project.description}
+                name={lang === "fr" ? (project.title_fr || project.title) : project.title}
+                description={lang === "fr" ? (project.description_fr || project.description) : project.description}
                 onClick={() => window.open(project.url)}
               />
             ))}
@@ -97,9 +120,9 @@ export default function Home() {
         )}
 
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
-          <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
+          <h1 className="tablet:m-10 text-2xl text-bold">{t.sections.about}</h1>
           <div className="tablet:m-10 mt-2 text-xl laptop:text-2xl max-w-2xl leading-relaxed">
-            {data.aboutYou.map((paragraph, index) => (
+            {aboutParagraphs.map((paragraph, index) => (
               <p key={index} className="mb-6">
                 {paragraph}
               </p>

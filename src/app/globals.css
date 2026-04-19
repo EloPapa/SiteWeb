@@ -14,8 +14,8 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
+  --background: #fdf0f3;
+  --foreground: #2a1020;
 }
 
 .dark {
@@ -26,6 +26,11 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
+}
+
+/* Dégradé rosé pour le header en mode light */
+.gradient-circle {
+  background: radial-gradient(ellipse at top left, #f9c6d0 0%, transparent 60%);
 }
 
 .justify-text {
