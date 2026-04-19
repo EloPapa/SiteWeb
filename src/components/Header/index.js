@@ -28,7 +28,9 @@ const ThemeButton = ({ darkMode, mounted, currentTheme, onToggle }) => {
 
 const MenuIcon = ({ open, mounted, currentTheme }) => {
   if (!mounted) return <span className="h-5 w-5 block" />;
-  const src = !open ? "menu-dark.svg" : "cancel-white.svg";
+  const src = !open
+    ? currentTheme === "dark" ? "menu-dark.svg" : "menu-white.svg"
+    : currentTheme === "dark" ? "cancel-white.svg" : "cancel-dark.svg";
   return (
     <img
       className="h-5 cursor-default"
@@ -139,6 +141,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
           {!isBlog ? (
             <>
               <Button onClick={handleWorkScroll}>{t.nav.passions}</Button>
+              
               {/* <Button onClick={handleAboutScroll}>{t.nav.about}</Button>
               {showBlog && (
                 <Button onClick={() => router.push("/blog")}>{t.nav.blog}</Button>
