@@ -13,7 +13,7 @@ import Socials from "../components/Socials";
 import WorkCard from "../components/WorkCard";
 
 import data from "../data/portfolio.json";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "@/context/LanguageContext";
 
 const ServiceCard = dynamic(() => import("../components/ServiceCard"), { ssr: false });
 

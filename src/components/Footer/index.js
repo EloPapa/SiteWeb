@@ -3,7 +3,7 @@ import React from "react";
 import Socials from "../Socials";
 import Link from "next/link";
 import Button from "../Button";
-import { useLanguage } from "../../context/LanguageContext";
+import { useLanguage } from "@/context/LanguageContext";
 
 const GRADIENT =
   "linear-gradient(to top, transparent 60%, #080810 100%), linear-gradient(to right, #080810 0%, #0f0a18 30%, #1a0d28 50%, #0f0a18 70%, #080810 100%)";
