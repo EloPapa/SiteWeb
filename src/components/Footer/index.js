@@ -1,15 +1,27 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Socials from "../Socials";
 import Link from "next/link";
 import Button from "../Button";
 import { useLanguage } from "../../context/LanguageContext";
+import { useTheme } from "next-themes";
 
-const GRADIENT =
-  "linear-gradient(to top, transparent 60%, #080810 100%), linear-gradient(to right, #080810 0%, #0f0a18 30%, #1a0d28 50%, #0f0a18 70%, #080810 100%)";
+const getGradient = (theme) =>
+  theme === "dark"
+    ? "linear-gradient(to top, transparent 60%, #080810 100%), linear-gradient(to right, #080810 0%, #0f0a18 30%, #1a0d28 50%, #0f0a18 70%, #080810 100%)"
+    : "linear-gradient(to top, transparent 60%, #fef2f5 100%), linear-gradient(to right, #fef2f5 0%, #f9d0de 30%, #f5b8cc 50%, #f9d0de 70%, #fef2f5 100%)";
 
 const Footer = () => {
   const { t } = useLanguage();
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const currentTheme = mounted ? theme || resolvedTheme : "dark";
+  const gradient = getGradient(currentTheme);
 
   return (
     <>
@@ -31,8 +43,8 @@ const Footer = () => {
         </div>
       </div>
       <h1
-        style={{ background: GRADIENT }}
-        className="text-sm text-bold mt-2 laptop:mt-10 p-2 laptop:p-0"
+        style={{ background: gradient }}
+        className="text-sm text-bold mt-2 laptop:mt-10 p-8 laptop:p-16"
       >
         {t.footer.madeWith}{" "}
         <Link href="http://www.eloise-bergeron.vercel.app">
