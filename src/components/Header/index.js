@@ -139,10 +139,10 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
           {!isBlog ? (
             <>
               <Button onClick={handleWorkScroll}>{t.nav.passions}</Button>
-              <Button onClick={handleAboutScroll}>{t.nav.about}</Button>
+              {/* <Button onClick={handleAboutScroll}>{t.nav.about}</Button>
               {showBlog && (
                 <Button onClick={() => router.push("/blog")}>{t.nav.blog}</Button>
-              )}
+              )} */}
             </>
           ) : (
             <Button onClick={() => router.push("/")}>{t.nav.home}</Button>
