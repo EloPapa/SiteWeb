@@ -6,7 +6,7 @@ import { useTheme } from "next-themes";
 
 import Button from "../Button";
 import data from "../../data/portfolio.json";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "../../context/LanguageContext";
 
 const getGradient = (theme) =>
   theme === "dark"
