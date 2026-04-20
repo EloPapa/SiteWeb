@@ -65,9 +65,9 @@ body {
 @media (max-width: 767px) {
   .medallion {
     top: 60px;
-    right: 22px;
-    width: 80px;
-    height: 80px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
     font-size: 38px;
   }
 }
