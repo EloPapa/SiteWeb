@@ -73,7 +73,7 @@ export default function Home() {
       <div className="gradient-circle-bottom"></div>
       <div className="medallion rounded-full overflow-hidden">
         <img
-          src="/images/elo/singe.jpg"
+          src="/images/elo/singe.png"
           alt="medallion"
           className="w-full h-full object-cover object-center"
         />  
