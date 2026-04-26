@@ -65,10 +65,20 @@ body {
 
 @media (max-width: 767px) {
   .medallion {
-    top: 60px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-    font-size: 38px;
+  position: absolute;
+  top: 250px;
+  right: 175px;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  overflow: hidden; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, #f9c6d0, #f5b8cc);
+  border: 2px solid rgba(220, 120, 150, 0.4);
   }
 }
