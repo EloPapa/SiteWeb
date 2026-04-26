@@ -69,7 +69,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
       >
         {({ open }) => (
           <>
-            <div className="flex items-center justify-between p-4">
+            <div className="flex items-center justify-between p-8">
               <h1
                 onClick={() => router.push("/")}
                 className="font-medium cursor-default"

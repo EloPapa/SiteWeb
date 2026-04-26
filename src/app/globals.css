@@ -66,8 +66,8 @@ body {
 @media (max-width: 767px) {
   .medallion {
   position: absolute;
-  top: 150px;
-  right: 100px;
+  top: 100px;
+  right: 50px;
   width: 350px;
   height: 350px;
   border-radius: 50%;
