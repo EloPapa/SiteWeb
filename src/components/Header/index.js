@@ -69,7 +69,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
       >
         {({ open }) => (
           <>
-            <div className="flex items-center justify-between px-8 py-8 min-h-[80px]">
+            <div className="flex items-center justify-between px-8 py-8">
               <h1
                 onClick={() => router.push("/")}
                 className="font-medium cursor-default"
@@ -78,7 +78,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 {name}.
               </h1>
 
-              <div className="flex items-center gap-2 h-full self-center">
+              <div className="flex items-center gap-2">
                 <Button onClick={toggle}>
                   {lang === "fr" ? "EN" : "FR"}
                 </Button>
@@ -137,15 +137,10 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
           {name}.
         </h1>
 
-        <div className="flex items-center gap-3 h-full self-center">
+        <div className="flex items-center gap-3">
           {!isBlog ? (
             <>
               <Button onClick={handleWorkScroll}>{t.nav.passions}</Button>
-              
-              {/* <Button onClick={handleAboutScroll}>{t.nav.about}</Button>
-              {showBlog && (
-                <Button onClick={() => router.push("/blog")}>{t.nav.blog}</Button>
-              )} */}
             </>
           ) : (
             <Button onClick={() => router.push("/")}>{t.nav.home}</Button>
