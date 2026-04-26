@@ -44,9 +44,10 @@ body {
   position: absolute;
   top: 90px;
   right: 22px;
-  width: 100px;
-  height: 100px;
+  width: 450px;
+  height: 450px;
   border-radius: 50%;
+  overflow: hidden; 
   display: flex;
   align-items: center;
   justify-content: center;

@@ -71,7 +71,13 @@ export default function Home() {
 
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
-      <div className="medallion">🐒</div>
+      <div className="medallion rounded-full overflow-hidden">
+        <img
+          src="/images/elo/singe.jpg"
+          alt="medallion"
+          className="w-full h-full object-cover object-center"
+        />  
+      </div>
 
       <Header
         handleWorkScroll={handleWorkScroll}
