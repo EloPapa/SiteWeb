@@ -69,7 +69,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
       >
         {({ open }) => (
           <>
-            <div className="flex items-center justify-between p-8">
+            <div className="flex items-center justify-between min-h-full">
               <h1
                 onClick={() => router.push("/")}
                 className="font-medium cursor-default"
@@ -78,7 +78,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 {name}.
               </h1>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 h-full self-center">
                 <Button onClick={toggle}>
                   {lang === "fr" ? "EN" : "FR"}
                 </Button>
@@ -137,7 +137,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
           {name}.
         </h1>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 h-full self-center">
           {!isBlog ? (
             <>
               <Button onClick={handleWorkScroll}>{t.nav.passions}</Button>
