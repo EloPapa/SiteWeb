@@ -71,7 +71,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
           <>
             <div
               className="flex items-center justify-between px-8"
-              style={{ height: "80px" }}
+              style={{ height: "60px" }}
             >
               <h1
                 onClick={() => router.push("/")}
