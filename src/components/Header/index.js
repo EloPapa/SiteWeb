@@ -69,7 +69,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
       >
         {({ open }) => (
           <>
-            <div className="flex items-center justify-between p-2">
+            <div className="flex items-center justify-between p-4">
               <h1
                 onClick={() => router.push("/")}
                 className="font-medium cursor-default"
@@ -126,7 +126,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
         style={{
           background: gradient,
           color: textColor,
-          padding: "14px 32px",
+          padding: "75px 32px",
         }}
       >
         <h1
