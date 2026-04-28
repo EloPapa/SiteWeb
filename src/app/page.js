@@ -100,9 +100,9 @@ export default function Home() {
 
           {/* 🐵 MÉDAILLON SINGE (HAUT DE PAGE) */}
             <div
-              className="fixed left-[5%] top-[5%] z-40
+              className="fixed left-[20%] top-[1%] z-40
                         w-[90px] h-[90px]
-                        sm:w-[120px] sm:h-[120px]
+                        sm:w-[100px] sm:h-[100px]
                         md:w-[160px] md:h-[160px]
                         rounded-full overflow-hidden"
             >
