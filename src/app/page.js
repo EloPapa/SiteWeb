@@ -59,13 +59,13 @@ export default function Home() {
         data.headerTaglineOne_fr || data.headerTaglineOne,
         data.headerTaglineTwo_fr || data.headerTaglineTwo,
         data.headerTaglineThree_fr || data.headerTaglineThree,
-        //data.headerTaglineFour_fr || data.headerTaglineFour,
+        
       ]
     : [
         data.headerTaglineOne,
         data.headerTaglineTwo,
         data.headerTaglineThree,
-        //data.headerTaglineFour,
+        
       ];
 
   const aboutParagraphs = lang === "fr"
@@ -114,7 +114,7 @@ export default function Home() {
         {/* CANVA SECTION */}
          <div className="mt-10 laptop:mt-20 p-2 laptop:p-0">
           <h1 className="text-2xl text-bold mb-5">
-            {t.sections.design || "Design"}
+            {t.sections.design || ""}
           </h1>
           <CanvaEmbed />
         </div>
