@@ -112,7 +112,7 @@ export default function Home() {
         </div>
 
         {/* CANVA SECTION */}
-         <div className="mt-10 laptop:mt-20 p-2 laptop:p-0">
+         <div className="mt-4 laptop:mt-6 p-2 laptop:p-0">
           <h1 className="text-2xl text-bold mb-5">
             {t.sections.design || ""}
           </h1>
