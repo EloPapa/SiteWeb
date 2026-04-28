@@ -4,12 +4,12 @@
   "headerTaglineOne": "HeY 👋",
   "headerTaglineTwo": "I'm Eloïse",
   "headerTaglineThree": "Student, gymnast and horsewoman",
-  "headerTaglineFour": "based in HappyLand, Canada",
+  
 
   "headerTaglineOne_fr": "COuCoU 👋",
   "headerTaglineTwo_fr": "Je suis Eloïse",
   "headerTaglineThree_fr": "Étudiante, gymnaste et cavalière",
-  "headerTaglineFour_fr": "de HappyLand, Canada",
+  
 
   "showCursor": true,
   "showBlog": true,
@@ -19,7 +19,7 @@
   "socials": [
     { "id": "1", "title": "Github", "link": "https://github.com/" },
     { "id": "2", "title": "Youtube", "link": "https://www.youtube.com/channel/UCC1zEcHJq3LAngIsqhWS9Jg/" },
-    { "id": "3", "title": "Email", "link": "mailto:sharky2000_822@hotmail.com" }
+    { "id": "3", "title": "Email", "link": "mailto:ericbergeron2000@gmail.com" }
   ],
 
   "projects": [
@@ -44,7 +44,7 @@
     {
       "id": "3",
       "title": "Gymnastics",
-      "title_fr": "Gymnastique",
+      "title_fr": "cdGymnastique",
       "description": "Training Sessions",
       "description_fr": "Séances d'entraînement",
       "imageSrc": "/images/gymnastique/jeu_montreal.jpg",
@@ -63,17 +63,17 @@
 
   "aboutYou": [
     "Meet the human version of a curious squirrel on espresso: a girl who asks so many questions that even Google would need a snack break.",
-    "With a brain that runs faster than her sneakers (and trust me, those sneakers move), she solves problems like it's a casual hobby",
-    "Her smile? Beautiful and permanently switched on. Rain, homework, Monday mornings—it doesn't matter. She beams like she's got a secret stash of sunshine in her pocket.",
-    "She'll surprise you by being incredibly helpful—whether it's lending a hand or cheering someone up.",
-    "In short: if curiosity had a captain, intelligence had a mascot, and kindness had a spokesperson… they'd all be fighting over her."
+    "With a brain that runs faster than her sneakers, she solves problems like it's a casual hobby.",
+    "Her smile? Beautiful and permanently switched on. Rain, homework, Monday mornings, it doesn't matter. She beams like she's got a secret stash of sunshine in her pocket.",
+    "She'll surprise you by being incredibly helpful, whether by lending a hand or cheering someone up.",
+    "In short: if curiosity had a captain, intelligence had a mascot, and kindness had a spokesperson…they'd all be fighting over her."
   ],
 
   "aboutYou_fr": [
-    "Imaginez la version humaine d'un écureuil curieux surcaféiné : une fille qui pose tellement de questions que même Google aurait besoin d'une pause collation.",
-    "Avec un cerveau qui roule plus vite que ses running shoes, elle règle les problèmes comme si c'était un passe-temps.",
-    "Son sourire? Beau et toujours allumé. Pluie, devoirs, lundi matin — ça change rien. Elle rayonne comme si elle avait une cache secrète de soleil dans ses poches.",
-    "Au détour elle vous surprendra à être incroyablement serviable — que ce soit pour donner un coup de main ou pour vous remonter le moral.",
-    "Bref, si la curiosité avait une capitaine, l'intelligence une mascotte et la gentillesse une porte-parole… elles se battraient toutes pour elle."
+    "Imaginez une version humaine d'un écureuil surcaféiné : une fille qui pose tellement de questions que même Google a besoin d'une pause.",
+    "Avec un cerveau qui va plus vite que ses running shoes, elle règle les problèmes comme si c'était un passe-temps.",
+    "Son sourire? Beau et toujours allumé. Pluie, devoirs, lundi matin, ça me change rien. Elle rayonne comme si elle avait une cache secrète de soleil dans ses poches.",
+    "Au détour elle vous surprendra à être incroyablement serviable, que ce soit pour donner un coup de main ou pour vous remonter le moral.",
+    "Bref, si la curiosité avait une capitaine, l'intelligence une mascotte et la gentillesse une porte-parole…elles se battraient toutes pour elle."
   ]
 }

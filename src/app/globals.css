@@ -16,7 +16,13 @@
 
 .name {
   font-family: 'Amsterdam', cursive;
-  font-size: 3rem;
+  font-size: 1rem; /* mobile */
+}
+
+@media (min-width: 768px) {
+  .name {
+    font-size: 3.5rem; /* desktop */
+  }
 }
 
 .container {

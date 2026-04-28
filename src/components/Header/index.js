@@ -49,7 +49,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
   const [mounted, setMounted] = useState(false);
   const { lang, t, toggle } = useLanguage();
 
-  const { name, showBlog, showResume, darkMode } = data;
+  const { name, showResume, darkMode } = data;
 
   useEffect(() => {
     setMounted(true);
