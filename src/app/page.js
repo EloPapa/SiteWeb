@@ -79,39 +79,41 @@ export default function Home() {
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
 
-    {/* 🐶 MÉDAILLON CHIEN (RESPONSIVE) */}
-          <div
-            className="fixed right-[5%] top-[30%] z-50
-                      w-[120px] h-[120px]
-                      sm:w-[180px] sm:h-[180px]
-                      md:w-[260px] md:h-[260px]
-                      lg:w-[350px] lg:h-[350px]
-                      rounded-full overflow-hidden"
-          >
-            <img
-              src="/images/elo/labradorPetite.png"
-              alt="chien"
-              className="w-full h-full object-cover object-center"
-              style={{
-                objectPosition: "center 15%",
-              }}
-            />
-          </div>
+{/* 🐶 MÉDAILLON CHIEN (RESPONSIVE) */}
+<div
+  className="fixed right-[5%] top-[8%] z-50
+            w-[120px] h-[120px]
+            sm:w-[180px] sm:h-[180px]
+            md:w-[320px] md:h-[320px]
+            lg:w-[420px] lg:h-[420px]
+            xl:w-[480px] xl:h-[480px]
+            rounded-full overflow-hidden"
+>
+  <img
+    src="/images/elo/labradorPetite.png"
+    alt="chien"
+    className="w-full h-full object-cover object-center"
+    style={{ objectPosition: "center 15%" }}
+  />
+</div>
 
-          {/* 🐵 MÉDAILLON SINGE (HAUT DE PAGE) */}
-            <div
-              className="absolute left-[40%] top-[1%] z-40
-                        w-[35px] h-[35px]
-                        sm:w-[120px] sm:h-[120px]
-                        md:w-[160px] md:h-[160px]
-                        rounded-full overflow-hidden"
-            >
-                  <img
-                    src="/images/elo/singe.png"
-                    alt="singe"
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
+{/* 🐵 MÉDAILLON SINGE (HAUT DE PAGE) */}
+<div
+  className="absolute z-40
+            left-[40%] top-[1%]
+            w-[35px] h-[35px]
+            sm:w-[120px] sm:h-[120px]
+            md:left-[210px] md:top-[5px] md:w-[65px] md:h-[65px]
+            lg:left-[230px] lg:top-[5px] lg:w-[75px] lg:h-[75px]
+            xl:left-[600px] xl:top-[100px] xl:w-[120px] xl:h-[120px]
+            rounded-full overflow-hidden"
+>
+  <img
+    src="/images/elo/singe.png"
+    alt="singe"
+    className="w-full h-full object-cover object-center"
+  />
+</div>
 
       <Header
         handleWorkScroll={handleWorkScroll}
