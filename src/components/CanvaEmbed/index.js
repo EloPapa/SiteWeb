@@ -9,8 +9,8 @@ export default function CanvaEmbed() {
         height: 0,
         paddingTop: "133.3333%",
         boxShadow: "0 2px 8px rgba(63,69,81,0.16)",
-        marginTop: "1.6em",
-        marginBottom: "0.9em",
+        marginTop: "0em",
+        marginBottom: "0em",
         overflow: "hidden",
         borderRadius: "8px",
       }}
