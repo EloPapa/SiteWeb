@@ -1,4 +1,5 @@
 "use client";
+
 import { useRef, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { useIsomorphicLayoutEffect } from "../utils";
@@ -11,14 +12,11 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
 import Socials from "../components/Socials";
-import WorkCard from "../components/WorkCard";
+
 const CanvaEmbed = dynamic(() => import("../components/CanvaEmbed"), { ssr: false });
-//const CanvaEmbed = dynamic(() => import("@/components/CanvaEmbed"), { ssr: false });
 
 import data from "../data/portfolio.json";
 import { useLanguage } from "../context/LanguageContext";
-
-//const ServiceCard = dynamic(() => import("../components/ServiceCard"), { ssr: false });
 
 export default function Home() {
   const workRef = useRef();
@@ -39,11 +37,11 @@ export default function Home() {
   const currentTheme = mounted ? theme || resolvedTheme : "light";
 
   const handleWorkScroll = () => {
-    window.scrollTo({ top: workRef.current.offsetTop, left: 0, behavior: "smooth" });
+    window.scrollTo({ top: workRef.current.offsetTop, behavior: "smooth" });
   };
 
   const handleAboutScroll = () => {
-    window.scrollTo({ top: aboutRef.current.offsetTop, left: 0, behavior: "smooth" });
+    window.scrollTo({ top: aboutRef.current.offsetTop, behavior: "smooth" });
   };
 
   useIsomorphicLayoutEffect(() => {
@@ -54,44 +52,79 @@ export default function Home() {
     );
   }, []);
 
-  const taglines = lang === "fr"
-    ? [
-        data.headerTaglineOne_fr || data.headerTaglineOne,
-        data.headerTaglineTwo_fr || data.headerTaglineTwo,
-        data.headerTaglineThree_fr || data.headerTaglineThree,
-        data.headerTaglineFour_fr || data.headerTaglineFour,
-      ]
-    : [
-        data.headerTaglineOne,
-        data.headerTaglineTwo,
-        data.headerTaglineThree,
-        data.headerTaglineFour,
-        
-      ];
+  const taglines =
+    lang === "fr"
+      ? [
+          data.headerTaglineOne_fr || data.headerTaglineOne,
+          data.headerTaglineTwo_fr || data.headerTaglineTwo,
+          data.headerTaglineThree_fr || data.headerTaglineThree,
+          data.headerTaglineFour_fr || data.headerTaglineFour,
+        ]
+      : [
+          data.headerTaglineOne,
+          data.headerTaglineTwo,
+          data.headerTaglineThree,
+          data.headerTaglineFour,
+        ];
 
-  const aboutParagraphs = lang === "fr"
-    ? (data.aboutYou_fr || data.aboutYou)
-    : data.aboutYou;
+  const aboutParagraphs =
+    lang === "fr" ? data.aboutYou_fr || data.aboutYou : data.aboutYou;
 
   return (
     <div className="relative">
-    
       <Head>
         <title>{data.name}</title>
       </Head>
 
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
-      <div className="medallion rounded-full overflow-hidden">
-        <img
-          src="/images/elo/singe.png"
-          alt="medallion"
-          className="w-full h-full object-cover object-center"
-        />
+
+      {/* 🐶 MÉDAILLON CHIEN */}
+      <div
+        className="rounded-full overflow-hidden"
+        style={{
+          position: "fixed",
+          right: "10%",
+          top: "35%",
+          transform: "translateY(-50%)",
+          width: "800px",
+          height: "800px",
+          zIndex: 50,
+        }}
+      >
         <img
           src="/images/elo/labradorPetite.png"
-          alt="medallion"
-          className="w-full h-full object-cover object-center"
+          alt="chien"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center 15%",
+          }}
+        />
+      </div>
+
+      {/* 🐵 MÉDAILLON SINGE EN BAS */}
+      <div
+        className="rounded-full overflow-hidden"
+        style={{
+          position: "fixed",
+          left: "15%",
+          top: "1%", // 👈 en bas de la page
+          width: "175px",
+          height: "175px",
+          zIndex: 40,
+        }}
+      >
+        <img
+          src="/images/elo/singe.png"
+          alt="singe"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
         />
       </div>
 
@@ -101,57 +134,40 @@ export default function Home() {
       />
 
       <div className="container mx-auto">
-        <div className="laptop:mt-0 mt-0">
-          <div className="mt-0">
-            <h1 ref={textOne} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-4/5 mob:w-full laptop:w-4/5">
-              {taglines[0]}
-            </h1>
-            <h1 ref={textTwo} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5">
-              {taglines[1]}
-            </h1>
-            <h1 ref={textThree} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5">
-              {taglines[2]}
-            </h1>
-            <h1 ref={textFour} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5">
-              {taglines[3]}
-            </h1>
+        <div className="mt-0">
+          <h1 ref={textOne} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-2 w-4/5">
+            {taglines[0]}
+          </h1>
+          <h1 ref={textTwo} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-2">
+            {taglines[1]}
+          </h1>
+          <h1 ref={textThree} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-2">
+            {taglines[2]}
+          </h1>
+          <h1 ref={textFour} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-2">
+            {taglines[3]}
+          </h1>
 
-          </div>
-          <Socials className="mt-2 laptop:mt-5" />
+          <Socials className="mt-5" />
         </div>
 
-        {/* CANVA SECTION */}
-         <div className="mt-0 laptop:mt-2 p-2 laptop:p-0">
-          <h1 className="text-2xl text-bold mb-5">
-            {t.sections.design || ""}
-          </h1>
+        {/* CANVA */}
+        <div className="mt-2 p-2">
+          <h1 className="text-2xl mb-5">{t.sections.design || ""}</h1>
           <CanvaEmbed />
         </div>
 
-        {/* PASSIONS 
-        <div
-          className="mt-10 laptop:mt-30 p-2 laptop:p-0 rounded-2xl"
-          style={{
-                  background: currentTheme === "dark"
-                    ? "#e8e8e8"
-                    : "#e8e8e8",
-                }}
-          ref={workRef}
-        >
-          <h1 className="text-2xl text-bold">{t.sections.passions}</h1>
-          <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4 max-w-8xl mx-auto">
-            {data.projects.map((project) => (
-              <WorkCard
-                key={project.id}
-                img={project.imageSrc}
-                name={lang === "fr" ? (project.title_fr || project.title) : project.title}
-                description={lang === "fr" ? (project.description_fr || project.description) : project.description}
-                onClick={() => window.open(project.url)}
-              />
+        {/* ABOUT */}
+        <div className="mt-40 p-2" ref={aboutRef}>
+          <h1 className="text-2xl mb-5">{t.sections.about}</h1>
+          <div className="text-xl max-w-2xl leading-relaxed">
+            {aboutParagraphs.map((paragraph, index) => (
+              <p key={index} className="mb-6">
+                {paragraph}
+              </p>
             ))}
           </div>
         </div>
-        */}
 
         {process.env.NODE_ENV === "development" && (
           <div className="fixed bottom-5 right-5">
@@ -160,17 +176,6 @@ export default function Home() {
             </Link>
           </div>
         )}
-
-        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
-          <h1 className="tablet:m-10 text-2xl text-bold">{t.sections.about}</h1>
-          <div className="tablet:m-10 mt-2 text-xl laptop:text-2xl max-w-2xl leading-relaxed">
-            {aboutParagraphs.map((paragraph, index) => (
-              <p key={index} className="mb-6">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </div>
       </div>
 
       <Footer />
