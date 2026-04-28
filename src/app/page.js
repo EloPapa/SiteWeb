@@ -81,7 +81,7 @@ export default function Home() {
 
     {/* 🐶 MÉDAILLON CHIEN (RESPONSIVE) */}
           <div
-            className="fixed right-[5%] top-[15%] z-50
+            className="fixed right-[5%] top-[35%] z-50
                       w-[120px] h-[120px]
                       sm:w-[180px] sm:h-[180px]
                       md:w-[260px] md:h-[260px]
