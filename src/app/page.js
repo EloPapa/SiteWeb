@@ -86,7 +86,7 @@ export default function Home() {
                       sm:w-[180px] sm:h-[180px]
                       md:w-[260px] md:h-[260px]
                       lg:w-[800px] lg:h-[800px]
-                      rounded-full"
+                      rounded-full overflow-hidden"
           >
             <img
               src="/images/elo/labradorPetite.png"
@@ -100,8 +100,8 @@ export default function Home() {
 
           {/* 🐵 MÉDAILLON SINGE (HAUT DE PAGE) */}
             <div
-              className="absolute left-[20%] top-[1%] z-40
-                        w-[50px] h-[50px]
+              className="absolute left-[60%] top-[1%] z-40
+                        w-[35px] h-[35px]
                         sm:w-[120px] sm:h-[120px]
                         md:w-[160px] md:h-[160px]
                         rounded-full overflow-hidden"
