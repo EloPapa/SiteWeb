@@ -73,6 +73,7 @@ export default function Home() {
 
   return (
     <div className="relative">
+    {/* INTRO SECTION */}
       <Head>
         <title>{data.name}</title>
       </Head>
