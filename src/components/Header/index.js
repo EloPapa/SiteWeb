@@ -107,7 +107,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
             </div>
 
             <PopoverPanel
-              className="absolute right-2 z-10 w-40 p-4 rounded-md shadow-md"
+              className="absolute right-2 z-10 w-30 p-4 rounded-md shadow-md"
               style={{
                 background: gradient,
                 color: textColor,
@@ -117,7 +117,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                     : "1px solid rgba(220,120,150,0.25)",
               }}
             >
-              <div className="flex flex-col items-right">
+              <div className="flex flex-col items-center">
                 <Button onClick={handleAboutScroll}>
                   {t.nav.about}
                 </Button>
