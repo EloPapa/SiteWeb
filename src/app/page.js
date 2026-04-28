@@ -86,7 +86,7 @@ export default function Home() {
                       sm:w-[180px] sm:h-[180px]
                       md:w-[260px] md:h-[260px]
                       lg:w-[800px] lg:h-[800px]
-                      rounded-full overflow-hidden"
+                      rounded-full"
           >
             <img
               src="/images/elo/labradorPetite.png"
