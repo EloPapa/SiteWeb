@@ -81,10 +81,11 @@ export default function Home() {
 
     {/* 🐶 MÉDAILLON CHIEN (RESPONSIVE) */}
           <div
-            className="fixed right-[10%] top-1/8 z-50
-                      w-[160px] h-[160px]
-                      sm:w-[220px] sm:h-[220px]
-                      md:w-[800px] md:h-[800px]
+            className="fixed right-[5%] top-[25%] z-50
+                      w-[120px] h-[120px]
+                      sm:w-[180px] sm:h-[180px]
+                      md:w-[260px] md:h-[260px]
+                      lg:w-[800px] lg:h-[800px]
                       rounded-full overflow-hidden"
           >
             <img
@@ -98,14 +99,13 @@ export default function Home() {
           </div>
 
           {/* 🐵 MÉDAILLON SINGE (HAUT DE PAGE) */}
-                <div
-                  className="fixed left-[15%] top-[1%] z-40
-                            w-[100px] h-[100px]
-                            sm:w-[140px] sm:h-[140px]
-                            md:w-[180px] md:h-[180px]
-                            rounded-full overflow-hidden
-                            hidden sm:block"
-                >
+            <div
+              className="fixed left-[5%] top-[5%] z-40
+                        w-[90px] h-[90px]
+                        sm:w-[120px] sm:h-[120px]
+                        md:w-[160px] md:h-[160px]
+                        rounded-full overflow-hidden"
+            >
                   <img
                     src="/images/elo/singe.png"
                     alt="singe"
