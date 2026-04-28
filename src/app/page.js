@@ -97,9 +97,9 @@ export default function Home() {
             />
           </div>
 
-          {/* 🐵 MÉDAILLON SINGE (BAS DE PAGE) */}
+          {/* 🐵 MÉDAILLON SINGE (HAUT DE PAGE) */}
                 <div
-                  className="fixed left-[5%] bottom-[5%] z-40
+                  className="fixed left-[15%] top-[1%] z-40
                             w-[100px] h-[100px]
                             sm:w-[140px] sm:h-[140px]
                             md:w-[180px] md:h-[180px]
