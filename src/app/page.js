@@ -82,7 +82,7 @@ export default function Home() {
     {/* 🐶 MÉDAILLON CHIEN (RESPONSIVE) */}
           <div
             className="fixed right-[5%] top-[25%] z-50
-                      w-[120px] h-[120px]
+                      w-[50px] h-[50px]
                       sm:w-[180px] sm:h-[180px]
                       md:w-[260px] md:h-[260px]
                       lg:w-[800px] lg:h-[800px]
@@ -100,7 +100,7 @@ export default function Home() {
 
           {/* 🐵 MÉDAILLON SINGE (HAUT DE PAGE) */}
             <div
-              className="absolute left-[35%] top-[1%] z-40
+              className="absolute left-[37%] top-[1%] z-40
                         w-[35px] h-[35px]
                         sm:w-[120px] sm:h-[120px]
                         md:w-[160px] md:h-[160px]
