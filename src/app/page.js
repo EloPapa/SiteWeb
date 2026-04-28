@@ -96,7 +96,7 @@ export default function Home() {
 
       <div className="container mx-auto">
         <div className="laptop:mt-0 mt-0">
-          <div className="mt-5">
+          <div className="mt-0">
             <h1 ref={textOne} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-4/5 mob:w-full laptop:w-4/5">
               {taglines[0]}
             </h1>
