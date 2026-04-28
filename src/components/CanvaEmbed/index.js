@@ -27,7 +27,7 @@ export default function CanvaEmbed() {
           border: "none",
         }}
         allowFullScreen
-        //title="Canva design"
+        title="Canva design"
       />
     </div>
   );

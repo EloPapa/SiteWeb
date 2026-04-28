@@ -18,7 +18,7 @@ const CanvaEmbed = dynamic(() => import("../components/CanvaEmbed"), { ssr: fals
 import data from "../data/portfolio.json";
 import { useLanguage } from "../context/LanguageContext";
 
-const ServiceCard = dynamic(() => import("../components/ServiceCard"), { ssr: false });
+//const ServiceCard = dynamic(() => import("../components/ServiceCard"), { ssr: false });
 
 export default function Home() {
   const workRef = useRef();
@@ -26,7 +26,7 @@ export default function Home() {
   const textOne = useRef();
   const textTwo = useRef();
   const textThree = useRef();
-  const textFour = useRef();
+
 
   const { lang, t } = useLanguage();
   const { theme, resolvedTheme } = useTheme();
@@ -48,7 +48,7 @@ export default function Home() {
 
   useIsomorphicLayoutEffect(() => {
     stagger(
-      [textOne.current, textTwo.current, textThree.current, textFour.current],
+      [textOne.current, textTwo.current, textThree.current],
       { y: 40, x: -10, transform: "scale(0.95) skew(10deg)" },
       { y: 0, x: 0, transform: "scale(1)" }
     );
@@ -59,13 +59,13 @@ export default function Home() {
         data.headerTaglineOne_fr || data.headerTaglineOne,
         data.headerTaglineTwo_fr || data.headerTaglineTwo,
         data.headerTaglineThree_fr || data.headerTaglineThree,
-        data.headerTaglineFour_fr || data.headerTaglineFour,
+        //data.headerTaglineFour_fr || data.headerTaglineFour,
       ]
     : [
         data.headerTaglineOne,
         data.headerTaglineTwo,
         data.headerTaglineThree,
-        data.headerTaglineFour,
+        //data.headerTaglineFour,
       ];
 
   const aboutParagraphs = lang === "fr"
@@ -106,9 +106,7 @@ export default function Home() {
             <h1 ref={textThree} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5">
               {taglines[2]}
             </h1>
-            <h1 ref={textFour} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5">
-              {taglines[3]}
-            </h1>
+            
           </div>
           <Socials className="mt-2 laptop:mt-5" />
         </div>
@@ -121,7 +119,7 @@ export default function Home() {
           <CanvaEmbed />
         </div>
 
-        {/* PASSIONS */}
+        {/* PASSIONS 
         <div
           className="mt-10 laptop:mt-30 p-2 laptop:p-0 rounded-2xl"
           style={{
@@ -144,6 +142,7 @@ export default function Home() {
             ))}
           </div>
         </div>
+        */}
 
         {process.env.NODE_ENV === "development" && (
           <div className="fixed bottom-5 right-5">
