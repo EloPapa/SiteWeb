@@ -118,15 +118,12 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               }}
             >
               <div className="flex flex-col gap-2">
-                <Button onClick={handleWorkScroll}>
-                  {t.nav.passions}
-                </Button>
                 <Button onClick={handleAboutScroll}>
                   {t.nav.about}
                 </Button>
                 <Button
                   onClick={() =>
-                    window.open("mailto:sharky2000_822@hotmail.com")
+                    window.open("mailto:ericbergeron2000@gmail.com")
                   }
                 >
                   {t.nav.contact}
@@ -173,7 +170,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
 
           <Button
             onClick={() =>
-              window.open("mailto:sharky2000_822@hotmail.com")
+              window.open("mailto:ericbergeron2000@gmail.com")
             }
           >
             {t.nav.contact}
