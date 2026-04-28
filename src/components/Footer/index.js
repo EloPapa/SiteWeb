@@ -47,9 +47,9 @@ const Footer = () => {
         className="text-sm text-bold mt-2 laptop:mt-10 p-8 laptop:p-16"
       >
         {t.footer.madeWith}{" "}
-        <Link href="https://www.happy-eloise.vercel.app">
+        
           <span className="underline underline-offset-1">Eloĩse</span>
-        </Link>
+        
       </h1>
     </>
   );
