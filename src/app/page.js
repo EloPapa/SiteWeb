@@ -12,7 +12,7 @@ import Footer from "../components/Footer";
 import Button from "../components/Button";
 import Socials from "../components/Socials";
 import WorkCard from "../components/WorkCard";
-//import CanvaEmbed from "../components/CanvaEmbed/index.js"
+import CanvaEmbed from "../components/CanvaEmbed"
 
 import data from "../data/portfolio.json";
 import { useLanguage } from "../context/LanguageContext";
@@ -113,12 +113,12 @@ export default function Home() {
         </div>
 
         {/* CANVA SECTION */}
-        {/* <div className="mt-10 laptop:mt-20 p-2 laptop:p-0">
+         <div className="mt-10 laptop:mt-20 p-2 laptop:p-0">
           <h1 className="text-2xl text-bold mb-5">
             {t.sections.design || "Design"}
           </h1>
           <CanvaEmbed />
-        </div> */}
+        </div>
 
         {/* PASSIONS */}
         <div
