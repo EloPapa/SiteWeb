@@ -153,7 +153,7 @@ export default function Home() {
 
           <div className="text-xl max-w-2xl leading-relaxed">
             {aboutParagraphs.map((paragraph, index) => (
-              <p key={index} className="mb-5">
+              <p key={index} className="mb-3">
                 {paragraph}
               </p>
             ))}
