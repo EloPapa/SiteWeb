@@ -147,7 +147,7 @@ export default function Home() {
         {/* ABOUT */}
         <div className="mt-5 p-2" ref={aboutRef}>
           
-          <h1 className="text-4xl mb-5" style={{ fontFamily: "'Amsterdam One', cursive" }}>
+          <h1 className="text-4xl mb-0" style={{ fontFamily: "'Amsterdam One', cursive" }}>
             {t.sections.about}
           </h1>
 
