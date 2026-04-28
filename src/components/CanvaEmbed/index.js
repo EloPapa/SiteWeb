@@ -6,8 +6,8 @@ export default function CanvaEmbed() {
       style={{
         position: "relative",
         width: "100%",
-        height: "100%",
-        paddingTop: "100%",
+        height: 0,
+        paddingTop: "135%",
         boxShadow: "0 2px 8px rgba(63,69,81,0.16)",
         marginTop: "0em",
         marginBottom: "0em",
