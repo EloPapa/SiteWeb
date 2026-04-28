@@ -97,29 +97,21 @@ export default function Home() {
             />
           </div>
 
-      {/* 🐵 MÉDAILLON SINGE EN BAS */}
-      <div
-        className="rounded-full overflow-hidden"
-        style={{
-          position: "fixed",
-          left: "15%",
-          top: "1%", // 👈 en bas de la page
-          width: "175px",
-          height: "200px",
-          zIndex: 40,
-        }}
-      >
-        <img
-          src="/images/elo/singe.png"
-          alt="singe"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: "center",
-          }}
-        />
-      </div>
+          {/* 🐵 MÉDAILLON SINGE (BAS DE PAGE) */}
+                <div
+                  className="fixed left-[5%] bottom-[5%] z-40
+                            w-[100px] h-[100px]
+                            sm:w-[140px] sm:h-[140px]
+                            md:w-[180px] md:h-[180px]
+                            rounded-full overflow-hidden
+                            hidden sm:block"
+                >
+                  <img
+                    src="/images/elo/singe.png"
+                    alt="singe"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
 
       <Header
         handleWorkScroll={handleWorkScroll}
