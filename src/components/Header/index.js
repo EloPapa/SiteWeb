@@ -117,7 +117,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                     : "1px solid rgba(220,120,150,0.25)",
               }}
             >
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-right">
                 <Button onClick={handleAboutScroll}>
                   {t.nav.about}
                 </Button>
