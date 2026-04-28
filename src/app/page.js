@@ -88,6 +88,11 @@ export default function Home() {
           alt="medallion"
           className="w-full h-full object-cover object-center"
         />
+        <img
+          src="/images/elo/labradorPetite.png"
+          alt="medallion"
+          className="w-full h-full object-cover object-center"
+        />
       </div>
 
       <Header
