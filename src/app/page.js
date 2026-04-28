@@ -12,7 +12,7 @@ import Footer from "../components/Footer";
 import Button from "../components/Button";
 import Socials from "../components/Socials";
 import WorkCard from "../components/WorkCard";
-import CanvaEmbed from "../components/CanvaEmbed";
+import CanvaEmbed from "../components/CanvaEmbed/index.js"
 
 import data from "../data/portfolio.json";
 import { useLanguage } from "../context/LanguageContext";
@@ -73,7 +73,7 @@ export default function Home() {
 
   return (
     <div className="relative">
-    {/* INTRO SECTION */}
+    
       <Head>
         <title>{data.name}</title>
       </Head>
