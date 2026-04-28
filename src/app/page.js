@@ -79,30 +79,23 @@ export default function Home() {
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
 
-      {/* 🐶 MÉDAILLON CHIEN */}
-      <div
-        className="rounded-full overflow-hidden"
-        style={{
-          position: "fixed",
-          right: "10%",
-          top: "35%",
-          transform: "translateY(-50%)",
-          width: "800px",
-          height: "800px",
-          zIndex: 50,
-        }}
-      >
-        <img
-          src="/images/elo/labradorPetite.png"
-          alt="chien"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: "center 15%",
-          }}
-        />
-      </div>
+    {/* 🐶 MÉDAILLON CHIEN (RESPONSIVE) */}
+          <div
+            className="fixed right-[10%] top-1/8 z-50
+                      w-[160px] h-[160px]
+                      sm:w-[220px] sm:h-[220px]
+                      md:w-[800px] md:h-[800px]
+                      rounded-full overflow-hidden"
+          >
+            <img
+              src="/images/elo/labradorPetite.png"
+              alt="chien"
+              className="w-full h-full object-cover object-center"
+              style={{
+                objectPosition: "center 15%",
+              }}
+            />
+          </div>
 
       {/* 🐵 MÉDAILLON SINGE EN BAS */}
       <div
@@ -112,7 +105,7 @@ export default function Home() {
           left: "15%",
           top: "1%", // 👈 en bas de la page
           width: "175px",
-          height: "175px",
+          height: "200px",
           zIndex: 40,
         }}
       >
