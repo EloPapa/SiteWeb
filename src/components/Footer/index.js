@@ -25,7 +25,7 @@ const Footer = () => {
 
   return (
     <>
-      <div className="mt-5 laptop:mt-5 p-2 laptop:p-0">
+      <div className="mt-0 laptop:mt-0 p-2 laptop:p-0">
         <div>
           <h1 className= "text-4xl mb-5 text-bold" style={{ fontFamily: "'Amsterdam One', cursive" }} >{t.sections.contact}</h1>
           <div className="mt-5">
