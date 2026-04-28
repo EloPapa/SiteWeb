@@ -27,7 +27,7 @@ const Footer = () => {
     <>
       <div className="mt-5 laptop:mt-40 p-2 laptop:p-0">
         <div>
-          <h1 className="text-2xl text-bold">{t.sections.contact}</h1>
+          <h1 className= "text-4xl mb-5 text-bold" style={{ fontFamily: "'Amsterdam One', cursive" }} >{t.sections.contact}</h1>
           <div className="mt-10">
             <h1 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold">
               {t.sections.collaborate1}
