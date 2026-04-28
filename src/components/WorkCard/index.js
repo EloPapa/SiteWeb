@@ -14,10 +14,10 @@ const WorkCard = ({ img, name, description, onClick }) => {
           src={img || "public/images/placeholder.png"}
         />
       </div>
-      <h1 className="mt-5 text-3xl font-medium">
+      <h1 className="mt-5 text-3xl font-medium text-stone-700">
         {name ? name : "Project Name"}
       </h1>
-      <h2 className="text-xl opacity-50">
+      <h2 className="text-xl text-stone-500">
         {description ? description : "Description"}
       </h2>
     </div>

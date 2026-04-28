@@ -1,5 +1,5 @@
 {
-  "name": "Eloïse",
+  "name": "Eloise & Eric .B²",
 
   "headerTaglineOne": "HeY 👋",
   "headerTaglineTwo": "I'm Eloïse",
@@ -57,24 +57,6 @@
       "description": "Competitions",
       "description_fr": "Compétitions",
       "imageSrc": "images/gymnastique/cat.png",
-      "url": "https://eloise-bergeron.vercel.app/"
-    },
-    {
-      "id": "5",
-      "title": "School Project 1",
-      "title_fr": "Projet scolaire 1",
-      "description": "Personnal Web Site",
-      "description_fr": "Site web personnel",
-      "imageSrc": "/images/ecole/web_site.png",
-      "url": "https://eloise-bergeron.vercel.app/"
-    },
-    {
-      "id": "6",
-      "title": "School Project 2",
-      "title_fr": "Projet scolaire 2",
-      "description": "Web Application Development",
-      "description_fr": "Développement d'application web",
-      "imageSrc": "/images/ecole/web_application.png",
       "url": "https://eloise-bergeron.vercel.app/"
     }
   ],

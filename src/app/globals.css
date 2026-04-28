@@ -9,6 +9,20 @@
   --breakpoint-desktop: 1600px;
 }
 
+@font-face {
+  font-family: 'Amsterdam';
+  src: url('/fonts/AmsterdamOne.ttf') format('truetype');
+}
+
+.name {
+  font-family: 'Amsterdam', cursive;
+  font-size: 3rem;
+}
+
+.container {
+  max-width: 72rem; /* 1152px */
+}
+
 * {
   cursor: default !important;
 }

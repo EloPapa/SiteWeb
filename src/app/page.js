@@ -1,8 +1,9 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { useIsomorphicLayoutEffect } from "../utils";
 import { stagger } from "../animations";
+import { useTheme } from "next-themes";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -11,9 +12,10 @@ import Footer from "../components/Footer";
 import Button from "../components/Button";
 import Socials from "../components/Socials";
 import WorkCard from "../components/WorkCard";
+import CanvaEmbed from "../components/CanvaEmbed";
 
 import data from "../data/portfolio.json";
-import { useLanguage } from "../context/LanguageContext"
+import { useLanguage } from "../context/LanguageContext";
 
 const ServiceCard = dynamic(() => import("../components/ServiceCard"), { ssr: false });
 
@@ -26,6 +28,14 @@ export default function Home() {
   const textFour = useRef();
 
   const { lang, t } = useLanguage();
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const currentTheme = mounted ? theme || resolvedTheme : "light";
 
   const handleWorkScroll = () => {
     window.scrollTo({ top: workRef.current.offsetTop, left: 0, behavior: "smooth" });
@@ -43,7 +53,6 @@ export default function Home() {
     );
   }, []);
 
-  // Sélectionne les taglines selon la langue
   const taglines = lang === "fr"
     ? [
         data.headerTaglineOne_fr || data.headerTaglineOne,
@@ -58,7 +67,6 @@ export default function Home() {
         data.headerTaglineFour,
       ];
 
-  // Sélectionne les paragraphes "about" selon la langue
   const aboutParagraphs = lang === "fr"
     ? (data.aboutYou_fr || data.aboutYou)
     : data.aboutYou;
@@ -76,7 +84,7 @@ export default function Home() {
           src="/images/elo/singe.png"
           alt="medallion"
           className="w-full h-full object-cover object-center"
-        />  
+        />
       </div>
 
       <Header
@@ -103,7 +111,24 @@ export default function Home() {
           <Socials className="mt-2 laptop:mt-5" />
         </div>
 
-        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
+        {/* CANVA SECTION */}
+        <div className="mt-10 laptop:mt-20 p-2 laptop:p-0">
+          <h1 className="text-2xl text-bold mb-5">
+            {t.sections.design || "Design"}
+          </h1>
+          <CanvaEmbed />
+        </div>
+
+        {/* PASSIONS */}
+        <div
+          className="mt-10 laptop:mt-30 p-2 laptop:p-0 rounded-2xl"
+          style={{
+                  background: currentTheme === "dark"
+                    ? "#e8e8e8"
+                    : "#e8e8e8",
+                }}
+          ref={workRef}
+        >
           <h1 className="text-2xl text-bold">{t.sections.passions}</h1>
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4 max-w-8xl mx-auto">
             {data.projects.map((project) => (

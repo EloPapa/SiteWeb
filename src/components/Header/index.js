@@ -29,8 +29,11 @@ const ThemeButton = ({ darkMode, mounted, currentTheme, onToggle }) => {
 const MenuIcon = ({ open, mounted, currentTheme }) => {
   if (!mounted) return <span className="h-5 w-5 block" />;
   const src = !open
-    ? currentTheme === "dark" ? "menu-dark.svg" : "menu-white.svg"
-    : currentTheme === "dark" ? "cancel-white.svg" : "cancel-white.svg";
+    ? currentTheme === "dark"
+      ? "menu-dark.svg"
+      : "menu-white.svg"
+    : "cancel-white.svg";
+
   return (
     <img
       className="h-5 cursor-default"
@@ -75,7 +78,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
             >
               <h1
                 onClick={() => router.push("/")}
-                className="font-medium cursor-default"
+                className="font-medium cursor-default name"
                 style={{ color: textColor }}
               >
                 {name}.
@@ -85,12 +88,14 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 <Button onClick={toggle}>
                   {lang === "fr" ? "EN" : "FR"}
                 </Button>
+
                 <ThemeButton
                   darkMode={darkMode}
                   mounted={mounted}
                   currentTheme={currentTheme}
                   onToggle={toggleTheme}
                 />
+
                 <PopoverButton className="cursor-default">
                   <MenuIcon
                     open={open}
@@ -106,15 +111,24 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               style={{
                 background: gradient,
                 color: textColor,
-                border: currentTheme === "dark"
-                  ? "1px solid rgba(180,120,220,0.2)"
-                  : "1px solid rgba(220,120,150,0.25)",
+                border:
+                  currentTheme === "dark"
+                    ? "1px solid rgba(180,120,220,0.2)"
+                    : "1px solid rgba(220,120,150,0.25)",
               }}
             >
               <div className="flex flex-col gap-2">
-                <Button onClick={handleWorkScroll}>{t.nav.passions}</Button>
-                <Button onClick={handleAboutScroll}>{t.nav.about}</Button>
-                <Button onClick={() => window.open("mailto:sharky2000_822@hotmail.com")}>
+                <Button onClick={handleWorkScroll}>
+                  {t.nav.passions}
+                </Button>
+                <Button onClick={handleAboutScroll}>
+                  {t.nav.about}
+                </Button>
+                <Button
+                  onClick={() =>
+                    window.open("mailto:sharky2000_822@hotmail.com")
+                  }
+                >
                   {t.nav.contact}
                 </Button>
               </div>
@@ -134,7 +148,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
       >
         <h1
           onClick={() => router.push("/")}
-          className="font-medium cursor-default"
+          className="font-medium cursor-default name"
           style={{ color: textColor }}
         >
           {name}.
@@ -142,18 +156,26 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
 
         <div className="flex items-center gap-3">
           {!isBlog ? (
-            <>
-              <Button onClick={handleWorkScroll}>{t.nav.passions}</Button>
-            </>
+            <Button onClick={handleWorkScroll}>
+              {t.nav.passions}
+            </Button>
           ) : (
-            <Button onClick={() => router.push("/")}>{t.nav.home}</Button>
+            <Button onClick={() => router.push("/")}>
+              {t.nav.home}
+            </Button>
           )}
 
           {showResume && (
-            <Button onClick={() => router.push("/resume")}>{t.nav.resume}</Button>
+            <Button onClick={() => router.push("/resume")}>
+              {t.nav.resume}
+            </Button>
           )}
 
-          <Button onClick={() => window.open("mailto:sharky2000_822@hotmail.com")}>
+          <Button
+            onClick={() =>
+              window.open("mailto:sharky2000_822@hotmail.com")
+            }
+          >
             {t.nav.contact}
           </Button>
 
