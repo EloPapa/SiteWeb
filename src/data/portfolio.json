@@ -3,13 +3,14 @@
 
   "headerTaglineOne": "HeY 👋",
   "headerTaglineTwo": "I'm Eloïse",
-  "headerTaglineThree": "Student, gymnast   & horsewoman",
+  "headerTaglineThree": "Student, gymnast",
+  "headerTaglineFour": "& horsewoman",
   
 
   "headerTaglineOne_fr": "COuCoU 👋",
   "headerTaglineTwo_fr": "Je suis Eloïse",
-  "headerTaglineThree_fr": "Étudiante, gymnaste   & cavalière",
-  
+  "headerTaglineThree_fr": "Étudiante, gymnaste & cavalière",
+  "headerTaglineFour_fr": "& cavalière",
 
   "showCursor": true,
   "showBlog": true,

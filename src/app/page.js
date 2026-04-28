@@ -26,7 +26,7 @@ export default function Home() {
   const textOne = useRef();
   const textTwo = useRef();
   const textThree = useRef();
-
+  const textFour = useRef();
 
   const { lang, t } = useLanguage();
   const { theme, resolvedTheme } = useTheme();
@@ -59,12 +59,13 @@ export default function Home() {
         data.headerTaglineOne_fr || data.headerTaglineOne,
         data.headerTaglineTwo_fr || data.headerTaglineTwo,
         data.headerTaglineThree_fr || data.headerTaglineThree,
-        
+        data.headerTaglineFour_fr || data.headerTaglineFour,
       ]
     : [
         data.headerTaglineOne,
         data.headerTaglineTwo,
         data.headerTaglineThree,
+        data.headerTaglineFour,
         
       ];
 
@@ -106,7 +107,10 @@ export default function Home() {
             <h1 ref={textThree} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5">
               {taglines[2]}
             </h1>
-            
+            <h1 ref={textFour} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5">
+              {taglines[2]}
+            </h1>
+
           </div>
           <Socials className="mt-2 laptop:mt-5" />
         </div>
