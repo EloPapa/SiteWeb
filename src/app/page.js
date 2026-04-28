@@ -146,7 +146,11 @@ export default function Home() {
 
         {/* ABOUT */}
         <div className="mt-40 p-2" ref={aboutRef}>
-          <h1 className="text-2xl mb-5">{t.sections.about}</h1>
+          
+          <h1 className="text-2xl mb-5" style={{ fontFamily: "'Amsterdam One', cursive" }}>
+            {t.sections.about}
+          </h1>
+
           <div className="text-xl max-w-2xl leading-relaxed">
             {aboutParagraphs.map((paragraph, index) => (
               <p key={index} className="mb-6">
