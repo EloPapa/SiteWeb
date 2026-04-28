@@ -1,7 +1,7 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import Socials from "../Socials";
-import Link from "next/link";
 import Button from "../Button";
 import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "next-themes";
@@ -24,34 +24,48 @@ const Footer = () => {
   const gradient = getGradient(currentTheme);
 
   return (
-    <>
-      <div className="mt-0 laptop:mt-0 p-2 laptop:p-0">
-        <div>
-          <h1 className= "text-4xl mb-5 text-bold" style={{ fontFamily: "'Amsterdam One', cursive" }} >{t.sections.contact}</h1>
-          <div className="mt-5">
-            <h1 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold">
-              {t.sections.collaborate1}
-            </h1>
-            <h1 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold">
-              {t.sections.collaborate2}
-            </h1>
-            <Button type="primary">{t.footer.scheduleSession}</Button>
-            <div className="mt-5">
-              <Socials />
-            </div>
+    <footer className="w-full flex justify-center mt-20">
+      
+      {/* CONTAINER CENTRÉ (comme un header classique) */}
+      <div className="w-full max-w-6xl px-6 flex flex-col items-center text-center">
+        
+        {/* SECTION CONTACT */}
+        <div className="flex flex-col items-center">
+          
+          <h2 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl font-bold">
+            {t.sections.collaborate1}
+          </h2>
+
+          <h2 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl font-bold">
+            {t.sections.collaborate2}
+          </h2>
+
+          <div className="mt-6">
+            <Button type="primary">
+              {t.footer.scheduleSession}
+            </Button>
+          </div>
+
+          <div className="mt-6">
+            <Socials />
           </div>
         </div>
+
+        {/* FOOTER BAS */}
+        <div className="w-full mt-16">
+          <h3
+            style={{ background: gradient }}
+            className="text-sm font-bold p-8 text-center rounded-lg"
+          >
+            {t.footer.madeWith}{" "}
+            <span className="underline underline-offset-2">
+              Eloĩse
+            </span>
+          </h3>
+        </div>
+
       </div>
-      <h1
-        style={{ background: gradient }}
-        className="text-sm text-bold mt-2 laptop:mt-10 p-8 laptop:p-16"
-      >
-        {t.footer.madeWith}{" "}
-        
-          <span className="underline underline-offset-1">Eloĩse</span>
-        
-      </h1>
-    </>
+    </footer>
   );
 };
 

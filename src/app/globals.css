@@ -19,6 +19,11 @@
   font-size: 1.5rem; /* mobile */
 }
 
+.aboutRef {
+  font-family: 'Amsterdam', cursive;
+  font-size: 1.5rem; /* mobile */
+}
+
 @media (min-width: 768px) {
   .name {
     font-size: 3.5rem; /* desktop */
