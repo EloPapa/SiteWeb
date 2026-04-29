@@ -124,7 +124,7 @@ export default function Home() {
 
         {/* 🎯 PORTFOLIO (IMPORTANT : REF ICI) */}
         <div className="mt-10 p-2" ref={workRef}>
-          <h1 className="text-4xl mb-5">{t.nav.portfolio}</h1>
+          <h1 className="sr-only">{t.nav.portfolio}</h1>
           <CanvaEmbed />
         </div>
 
