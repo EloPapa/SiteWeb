@@ -21,6 +21,7 @@ import { useLanguage } from "../context/LanguageContext";
 export default function Home() {
   const workRef = useRef();
   const aboutRef = useRef();
+
   const textOne = useRef();
   const textTwo = useRef();
   const textThree = useRef();
@@ -36,12 +37,32 @@ export default function Home() {
 
   const currentTheme = mounted ? theme || resolvedTheme : "light";
 
+  // ✅ SCROLLS
   const handleWorkScroll = () => {
-    window.scrollTo({ top: workRef.current.offsetTop, behavior: "smooth" });
+    if (workRef.current) {
+      window.scrollTo({
+        top: workRef.current.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handlePortfolioScroll = () => {
+    if (workRef.current) {
+      window.scrollTo({
+        top: workRef.current.offsetTop,
+        behavior: "smooth",
+      });
+    }
   };
 
   const handleAboutScroll = () => {
-    window.scrollTo({ top: aboutRef.current.offsetTop, behavior: "smooth" });
+    if (aboutRef.current) {
+      window.scrollTo({
+        top: aboutRef.current.offsetTop,
+        behavior: "smooth",
+      });
+    }
   };
 
   useIsomorphicLayoutEffect(() => {
@@ -76,80 +97,40 @@ export default function Home() {
         <title>{data.name}</title>
       </Head>
 
-      <div className="gradient-circle"></div>
-      <div className="gradient-circle-bottom"></div>
-
-{/* 🐶 MÉDAILLON CHIEN (RESPONSIVE) */}
-<div
-  className="absolute right-[5%] top-[9%] z-10
-            w-[120px] h-[120px]
-            sm:w-[180px] sm:h-[180px]
-            md:w-[320px] md:h-[320px]
-            lg:w-[420px] lg:h-[420px]
-            xl:w-[480px] xl:h-[480px]
-            rounded-full overflow-hidden"
->
-  <img
-    src="/images/elo/labradorPetite.png"
-    alt="chien"
-    className="w-full h-full object-cover object-center"
-    style={{ objectPosition: "center 15%" }}
-  />
-</div>
-
-{/* 🐵 MÉDAILLON SINGE (HAUT DE PAGE) */}
-<div
-  className="absolute z-40
-            left-[40%] top-[1%]
-            w-[35px] h-[35px]
-            sm:w-[120px] sm:h-[120px]
-            md:left-[210px] md:top-[5px] md:w-[65px] md:h-[65px]
-            lg:left-[230px] lg:top-[5px] lg:w-[75px] lg:h-[75px]
-            xl:left-[600px] xl:top-[100px] xl:w-[120px] xl:h-[120px]
-            rounded-full overflow-hidden"
->
-  <img
-    src="/images/elo/singe.png"
-    alt="singe"
-    className="w-full h-full object-cover object-center"
-  />
-</div>
-
       <Header
         handleWorkScroll={handleWorkScroll}
         handleAboutScroll={handleAboutScroll}
+        handlePortfolioScroll={handlePortfolioScroll}
       />
 
       <div className="container mx-auto">
+        {/* HERO */}
         <div className="mt-0">
-          <h1 ref={textOne} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-2 w-4/5">
+          <h1 ref={textOne} className="text-3xl laptop:text-6xl p-2 w-4/5">
             {taglines[0]}
           </h1>
-          <h1 ref={textTwo} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-2">
+          <h1 ref={textTwo} className="text-3xl laptop:text-6xl p-2">
             {taglines[1]}
           </h1>
-          <h1 ref={textThree} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-2">
+          <h1 ref={textThree} className="text-3xl laptop:text-6xl p-2">
             {taglines[2]}
           </h1>
-          <h1 ref={textFour} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-2">
+          <h1 ref={textFour} className="text-3xl laptop:text-6xl p-2">
             {taglines[3]}
           </h1>
 
           <Socials className="mt-5" />
         </div>
 
-        {/* CANVA */}
-        <div className="mt-2 p-2">
-          <h1 className="text-2xl mb-5">{t.sections.design || ""}</h1>
+        {/* 🎯 PORTFOLIO (IMPORTANT : REF ICI) */}
+        <div className="mt-10 p-2" ref={workRef}>
+          <h1 className="text-4xl mb-5">{t.nav.portfolio}</h1>
           <CanvaEmbed />
         </div>
 
         {/* ABOUT */}
         <div className="mt-10 p-2" ref={aboutRef}>
-          
-          <h1 className="text-4xl mb-10" style={{ fontFamily: "'Amsterdam', cursive" }}>
-            {t.sections.about}
-          </h1>
+          <h1 className="text-4xl mb-10">{t.sections.about}</h1>
 
           <div className="text-xl max-w-2xl leading-relaxed">
             {aboutParagraphs.map((paragraph, index) => (
