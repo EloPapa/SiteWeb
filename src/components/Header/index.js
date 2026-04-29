@@ -63,6 +63,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
     setTheme(currentTheme === "dark" ? "light" : "dark");
   };
 
+  const nameStyle = {
+    color: textColor,
+    fontFamily: "'Amsterdam', cursive",
+  };
+
   return (
     <>
       {/* 📱 MOBILE */}
@@ -79,7 +84,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               <h1
                 onClick={() => router.push("/")}
                 className="font-medium cursor-default name"
-                style={{ color: textColor }}
+                style={nameStyle}
               >
                 {name}.
               </h1>
@@ -146,7 +151,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
         <h1
           onClick={() => router.push("/")}
           className="font-medium cursor-default name"
-          style={{ color: textColor }}
+          style={nameStyle}
         >
           {name}.
         </h1>
