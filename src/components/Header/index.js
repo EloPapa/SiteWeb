@@ -130,6 +130,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
                 <Button onClick={handleAboutScroll}>
                   {t.nav.about}
                 </Button>
+                
                 <Button
                   onClick={() =>
                     window.open("mailto:ericbergeron2000@gmail.com")
@@ -168,7 +169,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
               </Button>
 
               <Button onClick={handleWorkScroll}>
-                {t.nav.passions}
+                {t.nav.about}
               </Button>
             </>
           ) : (
