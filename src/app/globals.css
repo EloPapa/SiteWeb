@@ -12,6 +12,9 @@
 @font-face {
   font-family: 'Amsterdam';
   src: url('/fonts/AmsterdamOne.ttf') format('truetype');
+  font-display: swap;        /* ← c'est ça qui manque */
+  font-weight: normal;
+  font-style: normal;
 }
 
 .name {
