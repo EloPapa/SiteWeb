@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
-import Providers from "./providers"; //
+import Providers from "./providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,19 +19,27 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    
     <html
       lang="fr"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-    <body className="min-h-full flex flex-col">
-      <Providers>        
-        <div className="min-h-full">          
-          {children}
-        </div>
-      </Providers>
-    </body>
+      <head>
+        <link
+          rel="preload"
+          href="/fonts/AmsterdamOne.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body className="min-h-full flex flex-col">
+        <Providers>
+          <div className="min-h-full">
+            {children}
+          </div>
+        </Providers>
+      </body>
     </html>
   );
 }
