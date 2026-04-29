@@ -47,13 +47,13 @@ export default function Home() {
 
   const handlePortfolioScroll = () => {
     if (workRef.current) {
-      window.scrollTo({ top: workRef.current.offsetTop - HEADER_OFFSET, behavior: "smooth" });
+      window.scrollTo({ top: workRef.current, behavior: "smooth" });
     }
   };
 
   const handleAboutScroll = () => {
     if (aboutRef.current) {
-      window.scrollTo({ top: aboutRef.current.offsetTop - HEADER_OFFSET, behavior: "smooth" });
+      window.scrollTo({ top: aboutRef.current, behavior: "smooth" });
     }
   };
 
