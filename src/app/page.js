@@ -37,31 +37,21 @@ export default function Home() {
 
   const currentTheme = mounted ? theme || resolvedTheme : "light";
 
-  // ✅ SCROLLS
   const handleWorkScroll = () => {
     if (workRef.current) {
-      window.scrollTo({
-        top: workRef.current.offsetTop,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: workRef.current.offsetTop, behavior: "smooth" });
     }
   };
 
   const handlePortfolioScroll = () => {
     if (workRef.current) {
-      window.scrollTo({
-        top: workRef.current.offsetTop,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: workRef.current.offsetTop, behavior: "smooth" });
     }
   };
 
   const handleAboutScroll = () => {
     if (aboutRef.current) {
-      window.scrollTo({
-        top: aboutRef.current.offsetTop,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: aboutRef.current.offsetTop, behavior: "smooth" });
     }
   };
 
@@ -97,6 +87,42 @@ export default function Home() {
         <title>{data.name}</title>
       </Head>
 
+      {/* 🐶 MÉDAILLON CHIEN */}
+      <div
+        className="absolute right-[5%] top-[10%] z-10
+                  w-[120px] h-[120px]
+                  sm:w-[180px] sm:h-[180px]
+                  md:w-[320px] md:h-[320px]
+                  lg:w-[420px] lg:h-[420px]
+                  xl:w-[480px] xl:h-[480px]
+                  rounded-full overflow-hidden"
+      >
+        <img
+          src="/images/elo/labradorPetite.png"
+          alt="chien"
+          className="w-full h-full object-cover object-center"
+          style={{ objectPosition: "center 15%" }}
+        />
+      </div>
+
+      {/* 🐵 MÉDAILLON SINGE */}
+      <div
+        className="absolute z-40
+                  left-[40%] top-[1%]
+                  w-[35px] h-[35px]
+                  sm:w-[120px] sm:h-[120px]
+                  md:left-[210px] md:top-[5px] md:w-[65px] md:h-[65px]
+                  lg:left-[230px] lg:top-[5px] lg:w-[75px] lg:h-[75px]
+                  xl:left-[600px] xl:top-[100px] xl:w-[120px] xl:h-[120px]
+                  rounded-full overflow-hidden"
+      >
+        <img
+          src="/images/elo/singe.png"
+          alt="singe"
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
+
       <Header
         handleWorkScroll={handleWorkScroll}
         handleAboutScroll={handleAboutScroll}
@@ -122,7 +148,7 @@ export default function Home() {
           <Socials className="mt-5" />
         </div>
 
-        {/* 🎯 PORTFOLIO (IMPORTANT : REF ICI) */}
+        {/* 🎯 PORTFOLIO */}
         <div className="mt-10 p-2" ref={workRef}>
           <h1 className="sr-only">{t.nav.portfolio}</h1>
           <CanvaEmbed />
