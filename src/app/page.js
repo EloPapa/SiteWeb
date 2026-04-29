@@ -114,7 +114,7 @@ export default function Home() {
       {/* 🐵 MÉDAILLON SINGE */}
       <div
         className="absolute z-40
-                  left-[60%] top-[10%]
+                  left-[60%] top-[20%]
                   w-[35px] h-[35px]
                   sm:w-[120px] sm:h-[120px]
                   md:left-[210px] md:top-[5px] md:w-[65px] md:h-[65px]
