@@ -37,7 +37,7 @@ export default function Home() {
 
   const currentTheme = mounted ? theme || resolvedTheme : "light";
 
-  const HEADER_OFFSET = 800; // ajuste selon la hauteur réelle de ton header
+  const HEADER_OFFSET = 120; // ajuste selon la hauteur réelle de ton header
 
   const handleWorkScroll = () => {
     if (workRef.current) {
