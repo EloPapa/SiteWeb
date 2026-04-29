@@ -37,6 +37,8 @@ export default function Home() {
 
   const currentTheme = mounted ? theme || resolvedTheme : "light";
 
+  const HEADER_OFFSET = 80; // ajuste selon la hauteur réelle de ton header
+
   const handleWorkScroll = () => {
     if (workRef.current) {
       window.scrollTo({ top: workRef.current.offsetTop, behavior: "smooth" });
@@ -45,13 +47,13 @@ export default function Home() {
 
   const handlePortfolioScroll = () => {
     if (workRef.current) {
-      window.scrollTo({ top: workRef.current.offsetTop, behavior: "smooth" });
+      window.scrollTo({ top: workRef.current.offsetTop - HEADER_OFFSET, behavior: "smooth" });
     }
   };
 
   const handleAboutScroll = () => {
     if (aboutRef.current) {
-      window.scrollTo({ top: aboutRef.current.offsetTop, behavior: "smooth" });
+      window.scrollTo({ top: aboutRef.current.offsetTop - HEADER_OFFSET, behavior: "smooth" });
     }
   };
 
