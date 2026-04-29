@@ -38,9 +38,9 @@ export default function Home() {
   const currentTheme = mounted ? theme || resolvedTheme : "light";
 
   const getHeaderOffset = () => {
-  if (window.innerWidth < 640) return 20;   // mobile
+  if (window.innerWidth < 640) return 30;   // mobile
   if (window.innerWidth < 1024) return 70;  // tablet
-  return 265;                                 // desktop
+  return 275;                                 // desktop
 };
 
   const handleWorkScroll = () => {
