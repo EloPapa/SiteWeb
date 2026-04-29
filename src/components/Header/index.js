@@ -78,7 +78,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
         {({ open }) => (
           <>
             <div
-              className="flex items-center justify-between"
+              className="flex items-center justify-between px-1"
               style={{ height: "60px" }}
             >
               <h1
