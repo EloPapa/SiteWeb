@@ -126,6 +126,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
                 <Button onClick={handlePortfolioScroll}>
                   {t.nav.portfolio}
                 </Button>
+                
                 <Button onClick={handleAboutScroll}>
                   {t.nav.about}
                 </Button>
@@ -165,6 +166,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
               <Button onClick={handlePortfolioScroll}>
                 {t.nav.portfolio}
               </Button>
+
               <Button onClick={handleWorkScroll}>
                 {t.nav.passions}
               </Button>

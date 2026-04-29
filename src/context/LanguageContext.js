@@ -9,6 +9,7 @@ const fr = {
     blog: "Blog",
     resume: "CV",
     home: "Accueil",
+    portfolio: "Portfolio" 
   },
   sections: {
     passions: "Passions.",
@@ -31,6 +32,7 @@ const en = {
     blog: "Blog",
     resume: "Resume",
     home: "Home",
+    portfolio: "Portfolio" 
   },
   sections: {
     passions: "Passions.",
