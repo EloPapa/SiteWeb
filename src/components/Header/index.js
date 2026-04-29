@@ -43,7 +43,7 @@ const MenuIcon = ({ open, mounted, currentTheme }) => {
   );
 };
 
-const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
+const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, isBlog }) => {
   const router = useRouter();
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -123,6 +123,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               }}
             >
               <div className="flex flex-col items-center">
+                <Button onClick={handlePortfolioScroll}>
+                  {t.nav.portfolio}
+                </Button>
                 <Button onClick={handleAboutScroll}>
                   {t.nav.about}
                 </Button>
@@ -158,9 +161,14 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
 
         <div className="flex items-center gap-3">
           {!isBlog ? (
-            <Button onClick={handleWorkScroll}>
-              {t.nav.passions}
-            </Button>
+            <>
+              <Button onClick={handlePortfolioScroll}>
+                {t.nav.portfolio}
+              </Button>
+              <Button onClick={handleWorkScroll}>
+                {t.nav.passions}
+              </Button>
+            </>
           ) : (
             <Button onClick={() => router.push("/")}>
               {t.nav.home}
