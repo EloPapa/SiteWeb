@@ -37,7 +37,11 @@ export default function Home() {
 
   const currentTheme = mounted ? theme || resolvedTheme : "light";
 
-  const HEADER_OFFSET = 200; // ajuste selon la hauteur réelle de ton header
+  const getHeaderOffset = () => {
+  if (window.innerWidth < 640) return 60;   // mobile
+  if (window.innerWidth < 1024) return 70;  // tablet
+  return 250;                                 // desktop
+};
 
   const handleWorkScroll = () => {
     if (workRef.current) {
@@ -47,13 +51,13 @@ export default function Home() {
 
   const handlePortfolioScroll = () => {
     if (workRef.current) {
-      window.scrollTo({ top: workRef.current, behavior: "smooth" });
+      window.scrollTo({ top: workRef.current.offsetTop - getHeaderOffset(), behavior: "smooth" });
     }
   };
 
   const handleAboutScroll = () => {
     if (aboutRef.current) {
-      window.scrollTo({ top: aboutRef.current, behavior: "smooth" });
+      window.scrollTo({ top: aboutRef.current.offsetTop - getHeaderOffset(), behavior: "smooth" });
     }
   };
 
