@@ -38,7 +38,7 @@ export default function Home() {
   const currentTheme = mounted ? theme || resolvedTheme : "light";
 
   const getHeaderOffset = () => {
-  if (window.innerWidth < 640) return 50;   // mobile
+  if (window.innerWidth < 640) return 40;   // mobile
   if (window.innerWidth < 1024) return 70;  // tablet
   return 275;                                 // desktop
 };
@@ -114,7 +114,7 @@ export default function Home() {
       {/* 🐵 MÉDAILLON SINGE */}
       <div
         className="absolute z-40
-                  left-[40%] top-[1%]
+                  left-[60%] top-[10%]
                   w-[35px] h-[35px]
                   sm:w-[120px] sm:h-[120px]
                   md:left-[210px] md:top-[5px] md:w-[65px] md:h-[65px]
