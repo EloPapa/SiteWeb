@@ -1,8 +1,8 @@
 import React from "react";
 
 const CANVA_URLS = {
-  fr: "https://www.canva.com/design/DAHIEVkSkZc/ofmY5fjC9RyOVqU1AepXZg/view", // 🔁 Remplacez par votre URL FR
-  en: "https://www.canva.com/design/DAHIR2XINww/-dKDsR_qOfotl3mX082d0g/view", // 🔁 Remplacez par votre URL EN
+  fr: "https://www.canva.com/design/DAHIEVkSkZc/ofmY5fjC9RyOVqU1AepXZg/view?embed", // 🔁 Remplacez par votre URL FR
+  en: "https://www.canva.com/design/DAHIR2XINww/-dKDsR_qOfotl3mX082d0g/view?embed", // 🔁 Remplacez par votre URL EN
 };
 
 export default function CanvaEmbed({ lang = "en" }) {
