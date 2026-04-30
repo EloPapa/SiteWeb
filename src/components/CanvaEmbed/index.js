@@ -1,6 +1,13 @@
 import React from "react";
 
-export default function CanvaEmbed() {
+const CANVA_URLS = {
+  fr: "https://www.canva.com/design/DAHIEVkSkZc/ofmY5fjC9RyOVqU1AepXZg/view", // 🔁 Remplacez par votre URL FR
+  en: "https://www.canva.com/design/DAHIR2XINww/-dKDsR_qOfotl3mX082d0g/view", // 🔁 Remplacez par votre URL EN
+};
+
+export default function CanvaEmbed({ lang = "en" }) {
+  const url = CANVA_URLS[lang] ?? CANVA_URLS.en;
+
   return (
     <div
       style={{
@@ -17,7 +24,7 @@ export default function CanvaEmbed() {
     >
       <iframe
         loading="lazy"
-        src="https://www.canva.com/design/DAHIEVkSkZc/ofmY5fjC9RyOVqU1AepXZg/view?embed"
+        src={url}
         style={{
           position: "absolute",
           width: "100%",
@@ -27,7 +34,7 @@ export default function CanvaEmbed() {
           border: "none",
         }}
         allowFullScreen
-        title="Canva design"
+        title={`Canva portfolio ${lang.toUpperCase()}`}
       />
     </div>
   );

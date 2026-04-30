@@ -38,10 +38,10 @@ export default function Home() {
   const currentTheme = mounted ? theme || resolvedTheme : "light";
 
   const getHeaderOffset = () => {
-  if (window.innerWidth < 640) return 40;   // mobile
-  if (window.innerWidth < 1024) return 70;  // tablet
-  return 275;                                 // desktop
-};
+    if (window.innerWidth < 640) return 40;   // mobile
+    if (window.innerWidth < 1024) return 70;  // tablet
+    return 275;                                // desktop
+  };
 
   const handleWorkScroll = () => {
     if (workRef.current) {
@@ -114,7 +114,7 @@ export default function Home() {
       {/* 🐵 MÉDAILLON SINGE */}
       <div
         className="absolute z-40
-                  left-[60%] top-[20%]
+                  left-[40%] top-[1%]
                   w-[35px] h-[35px]
                   sm:w-[120px] sm:h-[120px]
                   md:left-[210px] md:top-[5px] md:w-[65px] md:h-[65px]
@@ -157,12 +157,14 @@ export default function Home() {
         {/* 🎯 PORTFOLIO */}
         <div className="mt-10 p-2" ref={workRef}>
           <h1 className="sr-only">{t.nav.portfolio}</h1>
-          <CanvaEmbed />
+          <CanvaEmbed lang={lang} />
         </div>
 
         {/* ABOUT */}
         <div className="mt-10 p-2" ref={aboutRef}>
-          <h1 className="text-3xl mb-10" style={{ fontFamily: "'Amsterdam', cursive", textDecoration: "underline" }}>{t.sections.about}</h1>
+          <h1 className="text-3xl mb-10" style={{ fontFamily: "'Amsterdam', cursive", textDecoration: "underline" }}>
+            {t.sections.about}
+          </h1>
 
           <div className="text-xl max-w-2xl leading-relaxed">
             {aboutParagraphs.map((paragraph, index) => (
