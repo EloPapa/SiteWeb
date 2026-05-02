@@ -35,7 +35,7 @@ export default function MultiplicationPage() {
             marginBottom: "1.5rem",
           }}
         >
-          ← Retour au portfolio
+          ← Portfolio
         </Link>
 
         {/* Ligne dorée */}
