@@ -14,7 +14,7 @@ import Button from "../components/Button";
 import Socials from "../components/Socials";
 
 // 🔁 Remplace l'ancien CanvaEmbed par le nouveau composant React Portfolio
-const Portfolio = dynamic(() => import("../components/Portfolio"), { ssr: false });
+const Portfolio = dynamic(() => import("../components/Portfolio/index"), { ssr: false });
 
 import data from "../data/portfolio.json";
 import { useLanguage } from "../context/LanguageContext";
