@@ -1,17 +1,11 @@
-"use client";
-
-import { useState } from "react";
-import MultiplicationGame from "@/components/MultiplicationGame";
+import MultiplicationGame from "@/components/MultiplicationGame/index.js";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Tables de multiplication",
+};
+
 export default function MultiplicationPage() {
-  const [lang, setLang] = useState("fr");
-
-  const t = {
-    fr: { retour: "← Retour au portfolio" },
-    en: { retour: "← Return to portfolio" },
-  }[lang];
-
   return (
     <main
       style={{
@@ -26,7 +20,7 @@ export default function MultiplicationPage() {
     >
       <div style={{ width: "100%", maxWidth: "420px" }}>
 
-        {/* Bouton retour dynamique */}
+        {/* Bouton retour */}
         <Link
           href="/"
           style={{
@@ -41,19 +35,13 @@ export default function MultiplicationPage() {
             marginBottom: "1.5rem",
           }}
         >
-          {t.retour}
+          ← Retour au portfolio
         </Link>
 
-        {/* Ligne */}
-        <div style={{
-          height: "3px",
-          background: "#a07a3a",
-          marginBottom: "1.5rem",
-          borderRadius: "2px"
-        }} />
+        {/* Ligne dorée */}
+        <div style={{ height: "3px", background: "#a07a3a", marginBottom: "1.5rem", borderRadius: "2px" }} />
 
-        {/* Jeu */}
-        <MultiplicationGame lang={lang} setLang={setLang} />
+        <MultiplicationGame />
 
       </div>
     </main>
