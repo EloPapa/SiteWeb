@@ -149,7 +149,7 @@ export default function MultiplicationGame() {
       {/* Bouton langue */}
       <div style={styles.langRow}>
         <button style={styles.langBtn} onClick={switchLang}>
-          {lang === "fr" ? "🇬🇧 EN" : "🇫🇷 FR"}
+          {lang === "fr" ? "EN" : "FR"}
         </button>
       </div>
 
