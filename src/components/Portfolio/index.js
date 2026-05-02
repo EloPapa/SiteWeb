@@ -254,7 +254,7 @@ export default function Portfolio({ lang = "fr" }) {
                 src="/images/portfolio/cat.png"
                 alt={t.alt.cat}
                 ariaLabel={t.ariaLink}
-                cardStyle={{ width: "125%" , aspectRatio: "1.30 / 1" }}
+                cardStyle={{ width: "145%" , aspectRatio: "1.4 / 1" }}
               />
               {/* Badge YouTube positionné sous l'image */}
               <a
