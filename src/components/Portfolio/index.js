@@ -1,6 +1,15 @@
 "use client";
 
 import React from "react";
+import { Nunito_Sans } from "next/font/google";
+
+const nunitoSans = Nunito_Sans({
+  subsets: ["latin"],
+  weight: "variable",
+  style: ["normal", "italic"],
+  variable: "--font-nunito",
+  axes: ["wdth"],
+});
 
 /**
  * Portfolio component — remplace l'embed Canva.
@@ -169,7 +178,7 @@ export default function Portfolio({ lang = "fr" }) {
           borderRadius: "8px",
           padding: "2rem 2rem 1.5rem",
           boxShadow: "0 2px 8px rgba(63,69,81,0.16)",
-          fontFamily: '"Helvetica Neue", Arial, sans-serif',
+          fontFamily: nunitoSans.style.fontFamily,
           color: "#2b2b2b",
           boxSizing: "border-box",
         }}
@@ -187,7 +196,7 @@ export default function Portfolio({ lang = "fr" }) {
         {/* Titre */}
         <h2
           style={{
-            fontFamily: '"Arial Black", Helvetica, sans-serif',
+            fontFamily: nunitoSans.style.fontFamily,
             fontWeight: 900,
             fontSize: "clamp(2.5rem, 8vw, 5rem)",
             color: "#a07a3a",
@@ -205,7 +214,9 @@ export default function Portfolio({ lang = "fr" }) {
             letterSpacing: "0.08em",
             color: "#7a5a2a",
             margin: "0 0 1.25rem 0",
-            fontWeight: 600,
+            fontWeight: 700,
+            fontFamily: nunitoSans.style.fontFamily,
+            fontStretch: "expanded",
           }}
         >
           {t.topQuote}
@@ -243,7 +254,7 @@ export default function Portfolio({ lang = "fr" }) {
                 src="/images/portfolio/cat.png"
                 alt={t.alt.cat}
                 ariaLabel={t.ariaLink}
-                cardStyle={{ width: "100%", aspectRatio: "1 / 1" }}
+                cardStyle={{ width: "125%" , aspectRatio: "1.30 / 1" }}
               />
               {/* Badge YouTube positionné sous l'image */}
               <a
@@ -271,7 +282,7 @@ export default function Portfolio({ lang = "fr" }) {
               flexDirection: "column",
               gap: "22px",
               alignItems: "stretch",
-              paddingTop: "48px",
+              paddingTop: "0px",
             }}
           >
             {/* Cheval — paysage moyen */}
@@ -279,7 +290,7 @@ export default function Portfolio({ lang = "fr" }) {
               src="/images/portfolio/horse.png"
               alt={t.alt.horse}
               ariaLabel={t.ariaLink}
-              cardStyle={{ width: "90%", aspectRatio: "4 / 3", alignSelf: "flex-start" }}
+              cardStyle={{ width: "90%", aspectRatio: "4 / 4", alignSelf: "flex-start" }}
             />
 
             {/* Tablette — portrait 2:3 */}
@@ -307,7 +318,9 @@ export default function Portfolio({ lang = "fr" }) {
               fontSize: "clamp(0.95rem, 2.2vw, 1.2rem)",
               letterSpacing: "0.08em",
               color: "#7a5a2a",
-              fontWeight: 600,
+              fontWeight: 700,
+              fontFamily: nunitoSans.style.fontFamily,
+              fontStretch: "expanded",
               margin: 0,
             }}
           >

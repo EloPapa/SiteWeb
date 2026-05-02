@@ -119,18 +119,18 @@ export default function Home() {
       />
 
       <div className="container mx-auto">
-        {/* HERO */}
+        {/* SECTION ACCUEIL/PRÉSENTATION */}
         <div className="mt-0">
-          <h1 ref={textOne} className="text-3xl laptop:text-6xl p-2 w-4/5">
+          <h1 ref={textOne} className="text-3xl laptop:text-6xl p-2 py-1.5 w-4/5">
             {taglines[0]}
           </h1>
-          <h1 ref={textTwo} className="text-3xl laptop:text-6xl p-2">
+          <h1 ref={textTwo} className="text-3xl laptop:text-6xl p-2 py-1.5">
             {taglines[1]}
           </h1>
-          <h1 ref={textThree} className="text-3xl laptop:text-6xl p-2">
+          <h1 ref={textThree} className="text-3xl laptop:text-6xl p-2 py-1.5">
             {taglines[2]}
           </h1>
-          <h1 ref={textFour} className="text-3xl laptop:text-6xl p-2">
+          <h1 ref={textFour} className="text-3xl laptop:text-6xl p-2 py-1.5">
             {taglines[3]}
           </h1>
 
@@ -144,7 +144,7 @@ export default function Home() {
         </div>
 
         {/* ABOUT */}
-        <div className="mt-20 p-2" ref={aboutRef}>
+        <div className="mt-15 p-2" ref={aboutRef}>
           <h1 className="text-3xl mb-10" style={{ fontFamily: "'Amsterdam', cursive", textDecoration: "underline" }}>
             {t.sections.about}
           </h1>
