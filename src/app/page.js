@@ -13,7 +13,8 @@ import Footer from "../components/Footer";
 import Button from "../components/Button";
 import Socials from "../components/Socials";
 
-const CanvaEmbed = dynamic(() => import("../components/CanvaEmbed"), { ssr: false });
+// 🔁 Remplace l'ancien CanvaEmbed par le nouveau composant React Portfolio
+const Portfolio = dynamic(() => import("../components/Portfolio"), { ssr: false });
 
 import data from "../data/portfolio.json";
 import { useLanguage } from "../context/LanguageContext";
@@ -111,24 +112,6 @@ export default function Home() {
         />
       </div>
 
-      {/* 🐵 MÉDAILLON SINGE */}
-      <div
-        className="absolute z-40
-                  left-[40%] top-[1%]
-                  w-[35px] h-[35px]
-                  sm:w-[120px] sm:h-[120px]
-                  md:left-[210px] md:top-[5px] md:w-[65px] md:h-[65px]
-                  lg:left-[230px] lg:top-[5px] lg:w-[75px] lg:h-[75px]
-                  xl:left-[600px] xl:top-[100px] xl:w-[120px] xl:h-[120px]
-                  rounded-full overflow-hidden"
-      >
-        <img
-          src="/images/elo/singe.png"
-          alt="singe"
-          className="w-full h-full object-cover object-center"
-        />
-      </div>
-
       <Header
         handleWorkScroll={handleWorkScroll}
         handleAboutScroll={handleAboutScroll}
@@ -154,10 +137,10 @@ export default function Home() {
           <Socials className="mt-5" />
         </div>
 
-        {/* 🎯 PORTFOLIO */}
+        {/* 🎯 PORTFOLIO (remplace l'embed Canva) */}
         <div className="mt-10 p-2" ref={workRef}>
           <h1 className="sr-only">{t.nav.portfolio}</h1>
-          <CanvaEmbed lang={lang} />
+          <Portfolio lang={lang} />
         </div>
 
         {/* ABOUT */}

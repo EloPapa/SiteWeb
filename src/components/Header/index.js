@@ -81,13 +81,22 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
               className="flex items-center justify-between px-1"
               style={{ height: "60px" }}
             >
-              <h1
-                onClick={() => router.push("/")}
-                className="font-medium cursor-default name"
-                style={nameStyle}
-              >
-                {name}.
-              </h1>
+              <div className="flex items-center gap-2">
+                <h1
+                  onClick={() => router.push("/")}
+                  className="font-medium cursor-default name"
+                  style={nameStyle}
+                >
+                  {name}.
+                </h1>
+                <div className="w-8 h-8 rounded-full overflow-hidden flex-shrink-0">
+                  <img
+                    src="/images/elo/singe.png"
+                    alt="singe"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+              </div>
 
               <div className="flex items-center gap-2">
                 <Button onClick={toggle}>
@@ -153,13 +162,22 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
           padding: "75px 32px",
         }}
       >
-        <h1
-          onClick={() => router.push("/")}
-          className="font-medium cursor-default name"
-          style={nameStyle}
-        >
-          {name}.
-        </h1>
+        <div className="flex items-center gap-3">
+          <h1
+            onClick={() => router.push("/")}
+            className="font-medium cursor-default name"
+            style={nameStyle}
+          >
+            {name}.
+          </h1>
+          <div className="w-40 h-40 rounded-full overflow-hidden flex-shrink-0">
+            <img
+              src="/images/elo/singe.png"
+              alt="singe"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+        </div>
 
         <div className="flex items-center gap-3">
           {!isBlog ? (
