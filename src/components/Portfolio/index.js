@@ -11,19 +11,8 @@ const nunitoSans = Nunito_Sans({
   axes: ["wdth"],
 });
 
-/**
- * Portfolio component — remplace l'embed Canva.
- *
- * 📁 Placez vos 4 images dans `public/images/portfolio/` :
- *   - medal.jpg       (selfie avec médaille)
- *   - horse.png       (cheval / saut d'obstacle)
- *   - cat.png         (chat acrobate)
- *   - tablet.png      (tablette / dessin)
- *
- * Les 4 images sont cliquables et ouvrent la chaîne YouTube dans un nouvel onglet.
- */
-
 const YOUTUBE_URL = "https://www.youtube.com/@HappyEloiseB";
+const MULTIPLICATION_URL = "/multiplication";
 
 const TRANSLATIONS = {
   fr: {
@@ -35,9 +24,10 @@ const TRANSLATIONS = {
       medal: "Eloïse avec sa médaille des Jeux de Montréal 2025",
       horse: "Eloïse à cheval en saut d'obstacle",
       cat: "Chat en équilibre - agilité",
-      tablet: "Création numérique sur tablette",
+      tablet: "Jeu des tables de multiplication",
     },
     ariaLink: "Voir la chaîne YouTube HappyEloiseB",
+    ariaTablet: "Jouer aux tables de multiplication",
   },
   en: {
     title: "PORTFOLIO",
@@ -48,16 +38,13 @@ const TRANSLATIONS = {
       medal: "Eloïse with her Jeux de Montréal 2025 medal",
       horse: "Eloïse riding - show jumping",
       cat: "Cat balancing - agility",
-      tablet: "Digital creation on tablet",
+      tablet: "Multiplication tables game",
     },
     ariaLink: "Watch HappyEloiseB YouTube channel",
+    ariaTablet: "Play the multiplication tables game",
   },
 };
 
-/**
- * Icône YouTube SVG inline.
- * Modifiez `size` (en px) pour changer la taille du badge.
- */
 function YouTubeIcon({ size = 36 }) {
   return (
     <svg
@@ -76,24 +63,21 @@ function YouTubeIcon({ size = 36 }) {
   );
 }
 
-/**
- * Carte image cliquable avec effet hover.
- * - showYoutubeBadge : affiche le logo YT en bas à gauche
- * - badgeSize        : taille du badge en px (défaut 36)
- */
 function PortfolioCard({
   src,
   alt,
   ariaLabel,
+  href,
+  external = true,
   cardStyle = {},
   showYoutubeBadge = false,
   badgeSize = 36,
 }) {
   return (
     <a
-      href={YOUTUBE_URL}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={href}
+      target={external ? "_blank" : "_self"}
+      rel={external ? "noopener noreferrer" : undefined}
       aria-label={ariaLabel}
       style={{
         position: "relative",
@@ -184,14 +168,7 @@ export default function Portfolio({ lang = "fr" }) {
         }}
       >
         {/* Barre dorée supérieure */}
-        <div
-          style={{
-            height: "3px",
-            width: "100%",
-            background: "#a07a3a",
-            marginBottom: "1.25rem",
-          }}
-        />
+        <div style={{ height: "3px", width: "100%", background: "#a07a3a", marginBottom: "1.25rem" }} />
 
         {/* Titre */}
         <h2
@@ -223,93 +200,85 @@ export default function Portfolio({ lang = "fr" }) {
         </p>
 
         {/* Grille 2 colonnes */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            columnGap: "16px",
-            alignItems: "start",
-          }}
-        >
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", columnGap: "16px", alignItems: "start" }}>
+
           {/* Colonne gauche */}
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "22px",
-              alignItems: "flex-start",
-            }}
-          >
-            {/* Médaille — portrait large */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "22px", alignItems: "flex-start" }}>
             <PortfolioCard
               src="/images/portfolio/medal.jpg"
               alt={t.alt.medal}
               ariaLabel={t.ariaLink}
+              href={YOUTUBE_URL}
+              external={true}
               cardStyle={{ width: "100%", aspectRatio: "3 / 4" }}
             />
-
-            {/* Chat — petit carré + badge YouTube en dessous */}
             <div style={{ display: "flex", flexDirection: "column", width: "65%" }}>
               <PortfolioCard
                 src="/images/portfolio/cat.png"
                 alt={t.alt.cat}
                 ariaLabel={t.ariaLink}
-                cardStyle={{ width: "145%" , aspectRatio: "1.4 / 1" }}
+                href={YOUTUBE_URL}
+                external={true}
+                cardStyle={{ width: "145%", aspectRatio: "1.4 / 1" }}
               />
-              {/* Badge YouTube positionné sous l'image */}
               <a
                 href={YOUTUBE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={t.ariaLink}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "flex-start",
-                  marginTop: "6px",
-                  paddingLeft: "2px",
-                }}
+                style={{ display: "flex", alignItems: "center", justifyContent: "flex-start", marginTop: "6px", paddingLeft: "2px" }}
               >
                 <YouTubeIcon size={84} />
               </a>
             </div>
           </div>
 
-          {/* Colonne droite — décalée vers le bas */}
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "22px",
-              alignItems: "stretch",
-              paddingTop: "0px",
-            }}
-          >
-            {/* Cheval — paysage moyen */}
+          {/* Colonne droite */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "22px", alignItems: "stretch", paddingTop: "0px" }}>
             <PortfolioCard
               src="/images/portfolio/horse.png"
               alt={t.alt.horse}
               ariaLabel={t.ariaLink}
+              href={YOUTUBE_URL}
+              external={true}
               cardStyle={{ width: "90%", aspectRatio: "4 / 4", alignSelf: "flex-start" }}
             />
 
-            {/* Tablette — portrait 2:3 */}
-            <PortfolioCard
-              src="/images/portfolio/tablet.png"
-              alt={t.alt.tablet}
-              ariaLabel={t.ariaLink}
-              cardStyle={{ width: "100%", aspectRatio: "2 / 3" }}
-            />
+            {/* Tablette → jeu de multiplication */}
+            <div style={{ position: "relative", width: "100%" }}>
+              <PortfolioCard
+                src="/images/portfolio/tablet.png"
+                alt={t.alt.tablet}
+                ariaLabel={t.ariaTablet}
+                href={MULTIPLICATION_URL}
+                external={false}
+                cardStyle={{ width: "100%", aspectRatio: "2 / 3" }}
+              />
+              {/* Badge indicateur */}
+              <span
+                style={{
+                  position: "absolute",
+                  top: "10px",
+                  right: "10px",
+                  background: "#a07a3a",
+                  color: "#fff",
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                  padding: "4px 8px",
+                  borderRadius: "4px",
+                  pointerEvents: "none",
+                  fontFamily: nunitoSans.style.fontFamily,
+                }}
+              >
+                JOUER →
+              </span>
+            </div>
           </div>
         </div>
 
         {/* Citation Mandela */}
-        <div
-          style={{
-            marginTop: "1.25rem",
-            paddingTop: "0.25rem",
-          }}
-        >
+        <div style={{ marginTop: "1.25rem", paddingTop: "0.25rem" }}>
           <p
             style={{
               display: "flex",
@@ -325,23 +294,9 @@ export default function Portfolio({ lang = "fr" }) {
             }}
           >
             {t.bottomQuote}
-            <span
-              style={{
-                flex: 1,
-                height: "2px",
-                background: "#a07a3a",
-                display: "inline-block",
-              }}
-            />
+            <span style={{ flex: 1, height: "2px", background: "#a07a3a", display: "inline-block" }} />
           </p>
-          <p
-            style={{
-              fontSize: "clamp(0.85rem, 2vw, 1rem)",
-              color: "#4a4a4a",
-              margin: "0.25rem 0 0 0",
-              fontStyle: "italic",
-            }}
-          >
+          <p style={{ fontSize: "clamp(0.85rem, 2vw, 1rem)", color: "#4a4a4a", margin: "0.25rem 0 0 0", fontStyle: "italic" }}>
             {t.author}
           </p>
         </div>
