@@ -118,7 +118,7 @@ export default function Home() {
         handlePortfolioScroll={handlePortfolioScroll}
       />
 
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-full sm:max-w-2xl lg:max-w-5xl xl:max-w-6xl">
         {/* SECTION ACCUEIL/PRÉSENTATION */}
         <div className="mt-0">
           <h1 ref={textOne} className="text-3xl laptop:text-6xl p-2 py-1.5 w-4/5">
