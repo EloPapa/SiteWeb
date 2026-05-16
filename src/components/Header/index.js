@@ -66,6 +66,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
   const nameStyle = {
     color: textColor,
     fontFamily: "'Amsterdam', cursive",
+    fontSize: "1.5rem",
   };
 
   return (
