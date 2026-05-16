@@ -159,7 +159,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
         style={{
           background: gradient,
           color: textColor,
-          padding: "60px 32px",
+          padding: "35px 32px",
         }}
       >
         <div className="flex items-center gap-3">
@@ -170,7 +170,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
           >
             {name}.
           </h1>
-          <div className="w-40 h-40 rounded-full overflow-hidden flex-shrink-0">
+          <div className="w-32 h-32 rounded-full overflow-hidden flex-shrink-0">
             <img
               src="/images/elo/singe.png"
               alt="singe"
