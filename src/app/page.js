@@ -100,7 +100,7 @@ export default function Home() {
                   w-[120px] h-[120px]
                   sm:w-[180px] sm:h-[180px]
                   md:w-[320px] md:h-[320px]
-                  lg:w-[420px] lg:h-[420px]
+                  lg:w-[280px] lg:h-[280px]
                   xl:w-[480px] xl:h-[480px]
                   rounded-full overflow-hidden"
       >
