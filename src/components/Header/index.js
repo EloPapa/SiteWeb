@@ -63,7 +63,13 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
     setTheme(currentTheme === "dark" ? "light" : "dark");
   };
 
-  const nameStyle = {
+  const nameStyleMobile = {
+    color: textColor,
+    fontFamily: "'Amsterdam', cursive",
+    fontSize: "1rem",
+  };
+
+  const nameStyleDesktop = {
     color: textColor,
     fontFamily: "'Amsterdam', cursive",
     fontSize: "2rem",
@@ -86,7 +92,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
                 <h1
                   onClick={() => router.push("/")}
                   className="font-medium cursor-default name"
-                  style={nameStyle}
+                  style={nameStyleMobile}
                 >
                   {name}.
                 </h1>
@@ -160,14 +166,14 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
         style={{
           background: gradient,
           color: textColor,
-          padding: "15px 32px",
+          padding: "px 32px",
         }}
       >
         <div className="flex items-center gap-3">
           <h1
             onClick={() => router.push("/")}
             className="font-medium cursor-default name"
-            style={nameStyle}
+            style={nameStyleDesktop}
           >
             {name}.
           </h1>
