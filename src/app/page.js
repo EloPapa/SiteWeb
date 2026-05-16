@@ -99,8 +99,8 @@ export default function Home() {
         className="absolute right-[5%] top-[10%] z-10
                   w-[120px] h-[120px]
                   sm:w-[180px] sm:h-[180px]
-                  md:w-[320px] md:h-[320px]
-                  lg:w-[280px] lg:h-[280px]
+                  md:w-[280px] md:h-[280px]
+                  lg:w-[380px] lg:h-[380px]
                   xl:w-[480px] xl:h-[480px]
                   rounded-full overflow-hidden"
       >
