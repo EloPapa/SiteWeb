@@ -120,7 +120,7 @@ export default function Home() {
       />
 
       {/* ✅ SECTION TAGLINES — hors du container, collée à gauche, sans marges */}
-      <div className="mt-0 px-1">
+      <div className="mt-0 px-4">
         <h1 ref={textOne} className="text-3xl laptop:text-4xl">
           {taglines[0]}
         </h1>
