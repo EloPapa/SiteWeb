@@ -122,7 +122,7 @@ export default function Home() {
 
       <div className="container mx-auto">
         {/* SECTION ACCUEIL/PRÉSENTATION */}
-        <div className="mt-0 p-2">
+        <div className="mt-0 p-1">
           <h1 ref={textOne} className="text-3xl laptop:text-4xl py-1.5">
             {taglines[0]}
           </h1>
