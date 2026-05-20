@@ -67,12 +67,14 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
     color: textColor,
     fontFamily: "'Amsterdam', cursive",
     fontSize: "1rem",
+    paddingLeft: "0.5rem",
   };
 
   const nameStyleDesktop = {
     color: textColor,
     fontFamily: "'Amsterdam', cursive",
     fontSize: "1rem",
+    paddingLeft: "0.5rem",
   };
 
   return (
