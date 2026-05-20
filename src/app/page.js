@@ -123,16 +123,16 @@ export default function Home() {
       <div className="container mx-auto">
         {/* SECTION ACCUEIL/PRÉSENTATION */}
         <div className="mt-0">
-          <h1 ref={textOne} className="text-3xl laptop:text-4xl p-1 px-4">
+          <h1 ref={textOne} className="text-3xl laptop:text-4xl py-1.5 px-2">
             {taglines[0]}
           </h1>
-          <h1 ref={textTwo} className="text-3xl laptop:text-4xl p-1 px-4">
+          <h1 ref={textTwo} className="text-3xl laptop:text-4xl p-1.5 px-2">
             {taglines[1]}
           </h1>
-          <h1 ref={textThree} className="text-3xl laptop:text-4xl p-1 px-4">
+          <h1 ref={textThree} className="text-3xl laptop:text-4xl p-1.5 px-2">
             {taglines[2]}
           </h1>
-          <h1 ref={textFour} className="text-3xl laptop:text-4xl p-1 px-4">
+          <h1 ref={textFour} className="text-3xl laptop:text-4xl p-1.5 px-2">
             {taglines[3]}
           </h1>
 
