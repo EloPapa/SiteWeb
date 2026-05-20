@@ -98,7 +98,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
                 >
                   {name}.
                 </h1>
-                <div className="w-5 h-5 rounded-full overflow-hidden flex-shrink-0">
+                <div className="w-2 h-2 rounded-full overflow-hidden flex-shrink-0">
                   <img
                     src="/images/elo/singe.png"
                     alt="singe"
