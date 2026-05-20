@@ -121,16 +121,16 @@ export default function Home() {
 
       {/* ✅ SECTION TAGLINES — hors du container, collée à gauche, sans marges */}
       <div className="mt-4 px-4">
-        <h1 ref={textOne} className="text-3xl laptop:text-4xl">
+        <h1 ref={textOne} className="text-3xl laptop:text-4xl 2xl:ml-32">
           {taglines[0]}
         </h1>
-        <h1 ref={textTwo} className="text-3xl laptop:text-4xl">
+        <h1 ref={textTwo} className="text-3xl laptop:text-4xl 2xl:ml-32">
           {taglines[1]}
         </h1>
-        <h1 ref={textThree} className="text-3xl laptop:text-4xl">
+        <h1 ref={textThree} className="text-3xl laptop:text-4xl 2xl:ml-32">
           {taglines[2]}
         </h1>
-        <h1 ref={textFour} className="text-3xl laptop:text-4xl">
+        <h1 ref={textFour} className="text-3xl laptop:text-4xl 2xl:ml-32">
           {taglines[3]}
         </h1>
 
