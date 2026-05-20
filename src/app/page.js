@@ -13,7 +13,6 @@ import Footer from "../components/Footer";
 import Button from "../components/Button";
 import Socials from "../components/Socials";
 
-// 🔁 Remplace l'ancien CanvaEmbed par le nouveau composant React Portfolio
 const Portfolio = dynamic(() => import("../components/Portfolio/index"), { ssr: false });
 
 import data from "../data/portfolio.json";
@@ -39,9 +38,9 @@ export default function Home() {
   const currentTheme = mounted ? theme || resolvedTheme : "light";
 
   const getHeaderOffset = () => {
-    if (window.innerWidth < 640) return 40;   // mobile
-    if (window.innerWidth < 1024) return 70;  // tablet
-    return 275;                                // desktop
+    if (window.innerWidth < 640) return 40;
+    if (window.innerWidth < 1024) return 70;
+    return 275;
   };
 
   const handleWorkScroll = () => {
@@ -96,13 +95,13 @@ export default function Home() {
 
       {/* 🐶 MÉDAILLON CHIEN */}
       <div
-        className="absolute right-[5%] top-[8%] z-10
+        className="absolute right-[5%] top-[9%] z-10
                   xl:right-[10%] xl:top-[3%]
                   2xl:right-[30%] 2xl:top-[3%]
                   w-[120px] h-[120px]
                   sm:w-[180px] sm:h-[180px]
                   md:w-[280px] md:h-[280px]
-                  lg:w-[280px] lg:h-[280px] 
+                  lg:w-[280px] lg:h-[280px]
                   xl:w-[280px] xl:h-[280px]
                   rounded-full overflow-hidden"
       >
@@ -120,26 +119,28 @@ export default function Home() {
         handlePortfolioScroll={handlePortfolioScroll}
       />
 
+      {/* ✅ SECTION TAGLINES — hors du container, collée à gauche, sans marges */}
+      <div className="mt-0 px-0">
+        <h1 ref={textOne} className="text-3xl laptop:text-4xl">
+          {taglines[0]}
+        </h1>
+        <h1 ref={textTwo} className="text-3xl laptop:text-4xl">
+          {taglines[1]}
+        </h1>
+        <h1 ref={textThree} className="text-3xl laptop:text-4xl">
+          {taglines[2]}
+        </h1>
+        <h1 ref={textFour} className="text-3xl laptop:text-4xl">
+          {taglines[3]}
+        </h1>
+
+        <Socials className="mt-5" />
+      </div>
+
+      {/* ✅ RESTE DE LA PAGE — dans le container centré */}
       <div className="container mx-auto">
-        {/* SECTION ACCUEIL/PRÉSENTATION */}
-        <div className="mt-0 p-2">
-          <h1 ref={textOne} className="text-3xl laptop:text-4xl">
-            {taglines[0]}
-          </h1>
-          <h1 ref={textTwo} className="text-3xl laptop:text-4xl">
-            {taglines[1]}
-          </h1>
-          <h1 ref={textThree} className="text-3xl laptop:text-4xl">
-            {taglines[2]}
-          </h1>
-          <h1 ref={textFour} className="text-3xl laptop:text-4xl">
-            {taglines[3]}
-          </h1>
 
-          <Socials className="mt-5" />
-        </div>
-
-        {/* 🎯 PORTFOLIO (remplace l'embed Canva) */}
+        {/* PORTFOLIO */}
         <div className="mt-10 p-2" ref={workRef}>
           <h1 className="sr-only">{t.nav.portfolio}</h1>
           <Portfolio lang={lang} />
@@ -147,7 +148,10 @@ export default function Home() {
 
         {/* ABOUT */}
         <div className="mt-10 pt-2" ref={aboutRef}>
-          <h1 className="text-3xl mb-10" style={{ fontFamily: "'Amsterdam', cursive", textDecoration: "underline" }}>
+          <h1
+            className="text-3xl mb-10"
+            style={{ fontFamily: "'Amsterdam', cursive", textDecoration: "underline" }}
+          >
             {t.sections.about}
           </h1>
 
