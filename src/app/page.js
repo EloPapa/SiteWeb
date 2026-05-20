@@ -98,7 +98,7 @@ export default function Home() {
       <div
         className="absolute right-[5%] top-[10%] z-10
                   xl:right-[10%] xl:top-[5%]
-                  2xl:right-[40%] 2xl:top-[5%]
+                  2xl:right-[30%] 2xl:top-[5%]
                   w-[120px] h-[120px]
                   sm:w-[180px] sm:h-[180px]
                   md:w-[280px] md:h-[280px]
@@ -140,13 +140,13 @@ export default function Home() {
         </div>
 
         {/* 🎯 PORTFOLIO (remplace l'embed Canva) */}
-        <div className="mt-10" ref={workRef}>
+        <div className="mt-10 p-2" ref={workRef}>
           <h1 className="sr-only">{t.nav.portfolio}</h1>
           <Portfolio lang={lang} />
         </div>
 
         {/* ABOUT */}
-        <div className="mt-10 p-2" ref={aboutRef}>
+        <div className="mt-10 pt-2" ref={aboutRef}>
           <h1 className="text-3xl mb-10" style={{ fontFamily: "'Amsterdam', cursive", textDecoration: "underline" }}>
             {t.sections.about}
           </h1>
