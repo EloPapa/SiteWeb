@@ -96,9 +96,9 @@ export default function Home() {
 
       {/* 🐶 MÉDAILLON CHIEN */}
       <div
-        className="absolute right-[5%] top-[10%] z-10
-                  xl:right-[10%] xl:top-[5%]
-                  2xl:right-[30%] 2xl:top-[5%]
+        className="absolute right-[5%] top-[8%] z-10
+                  xl:right-[10%] xl:top-[3%]
+                  2xl:right-[30%] 2xl:top-[3%]
                   w-[120px] h-[120px]
                   sm:w-[180px] sm:h-[180px]
                   md:w-[280px] md:h-[280px]
