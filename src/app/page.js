@@ -140,7 +140,7 @@ export default function Home() {
         </div>
 
         {/* 🎯 PORTFOLIO (remplace l'embed Canva) */}
-        <div className="mt-10 p-2" ref={workRef}>
+        <div className="mt-10" ref={workRef}>
           <h1 className="sr-only">{t.nav.portfolio}</h1>
           <Portfolio lang={lang} />
         </div>
