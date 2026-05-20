@@ -73,7 +73,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
   const nameStyleDesktop = {
     color: textColor,
     fontFamily: "'Amsterdam', cursive",
-    fontSize: "1rem",
+    fontSize: "1.25rem",
     paddingLeft: "0.5rem",
   };
 
@@ -98,7 +98,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
                 >
                   {name}.
                 </h1>
-                <div className="w-6 h-6 rounded-full overflow-hidden flex-shrink-0">
+                <div className="w-5 h-5 rounded-full overflow-hidden flex-shrink-0">
                   <img
                     src="/images/elo/singe.png"
                     alt="singe"
