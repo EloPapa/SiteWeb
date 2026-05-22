@@ -169,7 +169,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
           background: gradient,
           color: textColor,
           padding: "px 32px",
-          height: "80px", 
+          height: "75px", 
         }}
       >
         <div className="flex items-center gap-3">
