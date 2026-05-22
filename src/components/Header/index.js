@@ -88,7 +88,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
           <>
             <div
               className="flex items-center justify-between px-1"
-              style={{ height: "80px" }}
+              style={{ height: "70px" }}
             >
               <div className="flex items-center gap-2">
                 <h1
