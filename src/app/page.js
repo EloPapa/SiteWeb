@@ -51,13 +51,19 @@ export default function Home() {
 
   const handlePortfolioScroll = () => {
     if (workRef.current) {
-      window.scrollTo({ top: workRef.current.offsetTop - getHeaderOffset(), behavior: "smooth" });
+      window.scrollTo({
+        top: workRef.current.offsetTop - getHeaderOffset(),
+        behavior: "smooth",
+      });
     }
   };
 
   const handleAboutScroll = () => {
     if (aboutRef.current) {
-      window.scrollTo({ top: aboutRef.current.offsetTop - getHeaderOffset(), behavior: "smooth" });
+      window.scrollTo({
+        top: aboutRef.current.offsetTop - getHeaderOffset(),
+        behavior: "smooth",
+      });
     }
   };
 
@@ -95,15 +101,17 @@ export default function Home() {
 
       {/* 🐶 MÉDAILLON CHIEN */}
       <div
-        className="absolute right-[5%] top-[9%] z-10
-                  xl:right-[10%] xl:top-[3%]
-                  2xl:right-[20%] 2xl:top-[3%]
-                  w-[120px] h-[120px]
-                  sm:w-[180px] sm:h-[180px]
-                  md:w-[280px] md:h-[280px]
-                  lg:w-[280px] lg:h-[280px]
-                  xl:w-[280px] xl:h-[280px]
-                  rounded-full overflow-hidden"
+        className="
+          absolute z-10
+          right-[5%] top-[9%]
+          w-[120px] h-[120px]
+          sm:w-[180px] sm:h-[180px]
+          md:w-[280px] md:h-[280px]
+          lg:w-[280px] lg:h-[280px]
+          xl:right-[10%] xl:top-[3%] xl:w-[360px] xl:h-[360px]
+          2xl:right-[20%] 2xl:top-[3%] 2xl:w-[420px] 2xl:h-[420px]
+          rounded-full overflow-hidden
+        "
       >
         <img
           src="/images/elo/labradorPetite.png"
@@ -119,26 +127,38 @@ export default function Home() {
         handlePortfolioScroll={handlePortfolioScroll}
       />
 
-      {/* ✅ SECTION TAGLINES — hors du container, collée à gauche, sans marges */}
-      <div className="mt-4 px-4">
-        <h1 ref={textOne} className="text-3xl laptop:text-4xl 2xl:ml-160">
+      {/* SECTION TAGLINES */}
+      <div className="mt-4 px-4 xl:px-10 2xl:px-16">
+        <h1
+          ref={textOne}
+          className="text-3xl laptop:text-4xl xl:text-5xl 2xl:text-6xl 2xl:ml-160"
+        >
           {taglines[0]}
         </h1>
-        <h1 ref={textTwo} className="text-3xl laptop:text-4xl 2xl:ml-160">
+        <h1
+          ref={textTwo}
+          className="text-3xl laptop:text-4xl xl:text-5xl 2xl:text-6xl 2xl:ml-160"
+        >
           {taglines[1]}
         </h1>
-        <h1 ref={textThree} className="text-3xl laptop:text-4xl 2xl:ml-160">
+        <h1
+          ref={textThree}
+          className="text-3xl laptop:text-4xl xl:text-5xl 2xl:text-6xl 2xl:ml-160"
+        >
           {taglines[2]}
         </h1>
-        <h1 ref={textFour} className="text-3xl laptop:text-4xl 2xl:ml-160">
+        <h1
+          ref={textFour}
+          className="text-3xl laptop:text-4xl xl:text-5xl 2xl:text-6xl 2xl:ml-160"
+        >
           {taglines[3]}
         </h1>
 
         <Socials className="mt-5 2xl:ml-160" />
       </div>
 
-      {/* ✅ RESTE DE LA PAGE — dans le container centré */}
-      <div className="container mx-auto">
+      {/* RESTE DE LA PAGE */}
+      <div className="container mx-auto xl:max-w-6xl 2xl:max-w-screen-xl px-2 xl:px-8">
 
         {/* PORTFOLIO */}
         <div className="mt-10 p-2" ref={workRef}>
@@ -147,17 +167,20 @@ export default function Home() {
         </div>
 
         {/* ABOUT */}
-        <div className="mt-10 pt-2 px-2" ref={aboutRef}>
+        <div className="mt-10 pt-2 px-2 xl:px-4" ref={aboutRef}>
           <h1
-            className="text-3xl mb-10 px-2"
-            style={{ fontFamily: "'Amsterdam', cursive", textDecoration: "underline" }}
+            className="text-3xl xl:text-4xl 2xl:text-5xl mb-10 px-2"
+            style={{
+              fontFamily: "'Amsterdam', cursive",
+              textDecoration: "underline",
+            }}
           >
             {t.sections.about}
           </h1>
 
-          <div className="text-xl max-w-2xl leading-relaxed">
+          <div className="text-xl xl:text-2xl 2xl:text-2xl max-w-2xl xl:max-w-4xl 2xl:max-w-5xl leading-relaxed xl:leading-loose">
             {aboutParagraphs.map((paragraph, index) => (
-              <p key={index} className="mb-3">
+              <p key={index} className="mb-3 xl:mb-5">
                 {paragraph}
               </p>
             ))}
