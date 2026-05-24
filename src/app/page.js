@@ -112,7 +112,7 @@ export default function Home() {
           sm:w-[180px] sm:h-[180px]
           md:w-[280px] md:h-[280px]
           lg:right-[8%] lg:top-[3%] lg:w-[243px] lg:h-[243px]
-          xl:right-[10%] xl:top-[5%] xl:w-[347px] xl:h-[347px]
+          xl:right-[10%] xl:top-[4%] xl:w-[347px] xl:h-[347px]
           2xl:right-[20%] 2xl:top-[5%] 2xl:w-[476px] 2xl:h-[476px]
           rounded-full overflow-hidden
         "
