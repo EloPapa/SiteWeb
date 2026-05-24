@@ -17,9 +17,9 @@ const ThemeButton = ({ darkMode, mounted, currentTheme, onToggle }) => {
   if (!darkMode || !mounted) return null;
   return (
     <Button onClick={onToggle}>
-      {/* h-6 → xl: h-6*1.25 ≈ h-8  (7.5→ use h-8) */}
+      {/* h-9 (2.25rem) * 1.10 = 2.475rem ≈ h-10 */}
       <img
-        className="h-6 xl:h-[2.8rem] cursor-default"
+        className="h-6 xl:h-10 cursor-default"
         src={`/images/${currentTheme === "dark" ? "moon.svg" : "sun.svg"}`}
         alt="theme icon"
       />
@@ -78,12 +78,12 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
     paddingLeft: "0.5rem",
   };
 
-  // 2rem * 1.25 = 2.5rem
+  // 2rem * 1.10 = 2.2rem
   const nameStyleXL = {
     color: textColor,
     fontFamily: "'Amsterdam', cursive",
-    fontSize: "2.5rem",
-    paddingLeft: "0.9rem",
+    fontSize: "2.2rem",
+    paddingLeft: "0.8rem",
   };
 
   return (
@@ -173,16 +173,15 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
 
       {/* 💻 DESKTOP */}
       {/*
-        Valeurs précédentes XL → ×1.25 :
-        h-[110px] → h-[138px]
-        h-[130px] → h-[163px]
-        px-16     → px-20
-        px-24     → px-[7.5rem]
+        110px * 1.10 = 121px
+        130px * 1.10 = 143px
+        px-16 (4rem) * 1.10 = 4.4rem
+        px-24 (6rem) * 1.10 = 6.6rem
       */}
       <div
         className="hidden tablet:flex justify-between items-center sticky top-0 z-10 w-full
-                    px-6 xl:px-20 2xl:px-[7.5rem]
-                    h-[75px] xl:h-[138px] 2xl:h-[163px]"
+                    px-6 xl:px-[4.4rem] 2xl:px-[6.6rem]
+                    h-[75px] xl:h-[121px] 2xl:h-[143px]"
         style={{
           background: gradient,
           color: textColor,
@@ -190,11 +189,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
       >
         {/* LEFT — nom + singe */}
         {/*
-          gap-5 → gap-[1.5625rem]
-          w-20/h-20 (80px) → w-[100px] h-[100px]
-          w-24/h-24 (96px) → w-[120px] h-[120px]
+          gap-5 (1.25rem) * 1.10 = 1.375rem
+          80px * 1.10 = 88px
+          96px * 1.10 = 106px
         */}
-        <div className="flex items-center gap-3 xl:gap-[1.5rem]">
+        <div className="flex items-center gap-3 xl:gap-[1.375rem]">
           <h1
             onClick={() => router.push("/")}
             className="font-medium cursor-default name"
@@ -206,7 +205,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
           >
             {name}.
           </h1>
-          <div className="w-14 h-14 xl:w-[100px] xl:h-[100px] 2xl:w-[120px] 2xl:h-[120px] rounded-full overflow-hidden flex-shrink-0">
+          <div className="w-14 h-14 xl:w-[88px] xl:h-[88px] 2xl:w-[106px] 2xl:h-[106px] rounded-full overflow-hidden flex-shrink-0">
             <img
               src="/images/elo/singe.png"
               alt="singe"
@@ -217,31 +216,31 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
 
         {/* RIGHT — boutons de navigation */}
         {/*
-          gap-6 → gap-[1.875rem]
-          gap-8 → gap-10
-          text-xl  (1.25rem) → text-[1.5625rem]
-          text-2xl (1.5rem)  → text-[1.875rem]
+          gap-6 (1.5rem) * 1.10 = 1.65rem
+          gap-8 (2rem)   * 1.10 = 2.2rem
+          text-xl  (1.25rem) * 1.10 = 1.375rem
+          text-2xl (1.5rem)  * 1.10 = 1.65rem
         */}
-        <div className="flex items-center gap-3 xl:gap-[1.875rem] 2xl:gap-10">
+        <div className="flex items-center gap-3 xl:gap-[1.65rem] 2xl:gap-[2.2rem]">
           {!isBlog ? (
             <>
               <Button onClick={handlePortfolioScroll}>
-                <span className="xl:text-[1.5625rem] 2xl:text-[1.875rem]">{t.nav.portfolio}</span>
+                <span className="xl:text-[1.375rem] 2xl:text-[1.65rem]">{t.nav.portfolio}</span>
               </Button>
 
               <Button onClick={handleAboutScroll}>
-                <span className="xl:text-[1.5625rem] 2xl:text-[1.875rem]">{t.nav.about}</span>
+                <span className="xl:text-[1.375rem] 2xl:text-[1.65rem]">{t.nav.about}</span>
               </Button>
             </>
           ) : (
             <Button onClick={() => router.push("/")}>
-              <span className="xl:text-[1.5625rem] 2xl:text-[1.875rem]">{t.nav.home}</span>
+              <span className="xl:text-[1.375rem] 2xl:text-[1.65rem]">{t.nav.home}</span>
             </Button>
           )}
 
           {showResume && (
             <Button onClick={() => router.push("/resume")}>
-              <span className="xl:text-[1.5625rem] 2xl:text-[1.875rem]">{t.nav.resume}</span>
+              <span className="xl:text-[1.375rem] 2xl:text-[1.65rem]">{t.nav.resume}</span>
             </Button>
           )}
 
@@ -250,11 +249,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
               window.open("mailto:ericbergeron2000@gmail.com")
             }
           >
-            <span className="xl:text-[1.5625rem] 2xl:text-[1.875rem]">{t.nav.contact}</span>
+            <span className="xl:text-[1.375rem] 2xl:text-[1.65rem]">{t.nav.contact}</span>
           </Button>
 
           <Button onClick={toggle}>
-            <span className="xl:text-[1.5625rem] 2xl:text-[1.875rem]">{lang === "fr" ? "EN" : "FR"}</span>
+            <span className="xl:text-[1.375rem] 2xl:text-[1.65rem]">{lang === "fr" ? "EN" : "FR"}</span>
           </Button>
 
           <ThemeButton
