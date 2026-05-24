@@ -18,7 +18,7 @@ const ThemeButton = ({ darkMode, mounted, currentTheme, onToggle }) => {
   return (
     <Button onClick={onToggle}>
       <img
-        className="h-6 cursor-default"
+        className="h-6 xl:h-9 cursor-default"
         src={`/images/${currentTheme === "dark" ? "moon.svg" : "sun.svg"}`}
         alt="theme icon"
       />
@@ -75,6 +75,13 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
     fontFamily: "'Amsterdam', cursive",
     fontSize: "1.25rem",
     paddingLeft: "0.5rem",
+  };
+
+  const nameStyleXL = {
+    color: textColor,
+    fontFamily: "'Amsterdam', cursive",
+    fontSize: "2rem",
+    paddingLeft: "0.75rem",
   };
 
   return (
@@ -144,11 +151,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
                 <Button onClick={handlePortfolioScroll}>
                   {t.nav.portfolio}
                 </Button>
-                
+
                 <Button onClick={handleAboutScroll}>
                   {t.nav.about}
                 </Button>
-                
+
                 <Button
                   onClick={() =>
                     window.open("mailto:ericbergeron2000@gmail.com")
@@ -164,23 +171,28 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
 
       {/* 💻 DESKTOP */}
       <div
-        className="hidden tablet:flex justify-between items-center sticky top-0 z-10 w-full"
+        className="hidden tablet:flex justify-between items-center sticky top-0 z-10 w-full
+                    px-6 xl:px-16 2xl:px-24
+                    h-[75px] xl:h-[110px] 2xl:h-[130px]"
         style={{
           background: gradient,
           color: textColor,
-          padding: "px 32px",
-          height: "75px", 
         }}
       >
-        <div className="flex items-center gap-3">
+        {/* LEFT — nom + singe */}
+        <div className="flex items-center gap-3 xl:gap-5">
           <h1
             onClick={() => router.push("/")}
             className="font-medium cursor-default name"
-            style={nameStyleDesktop}
+            style={
+              mounted && typeof window !== "undefined" && window.innerWidth >= 1280
+                ? nameStyleXL
+                : nameStyleDesktop
+            }
           >
             {name}.
           </h1>
-          <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0">
+          <div className="w-14 h-14 xl:w-20 xl:h-20 2xl:w-24 2xl:h-24 rounded-full overflow-hidden flex-shrink-0">
             <img
               src="/images/elo/singe.png"
               alt="singe"
@@ -189,26 +201,27 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
+        {/* RIGHT — boutons de navigation */}
+        <div className="flex items-center gap-3 xl:gap-6 2xl:gap-8">
           {!isBlog ? (
             <>
               <Button onClick={handlePortfolioScroll}>
-                {t.nav.portfolio}
+                <span className="xl:text-xl 2xl:text-2xl">{t.nav.portfolio}</span>
               </Button>
 
               <Button onClick={handleAboutScroll}>
-                {t.nav.about}
+                <span className="xl:text-xl 2xl:text-2xl">{t.nav.about}</span>
               </Button>
             </>
           ) : (
             <Button onClick={() => router.push("/")}>
-              {t.nav.home}
+              <span className="xl:text-xl 2xl:text-2xl">{t.nav.home}</span>
             </Button>
           )}
 
           {showResume && (
             <Button onClick={() => router.push("/resume")}>
-              {t.nav.resume}
+              <span className="xl:text-xl 2xl:text-2xl">{t.nav.resume}</span>
             </Button>
           )}
 
@@ -217,11 +230,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
               window.open("mailto:ericbergeron2000@gmail.com")
             }
           >
-            {t.nav.contact}
+            <span className="xl:text-xl 2xl:text-2xl">{t.nav.contact}</span>
           </Button>
 
           <Button onClick={toggle}>
-            {lang === "fr" ? "EN" : "FR"}
+            <span className="xl:text-xl 2xl:text-2xl">{lang === "fr" ? "EN" : "FR"}</span>
           </Button>
 
           <ThemeButton
