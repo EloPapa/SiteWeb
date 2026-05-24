@@ -108,8 +108,8 @@ export default function Home() {
           sm:w-[180px] sm:h-[180px]
           md:w-[280px] md:h-[280px]
           lg:w-[280px] lg:h-[280px]
-          xl:right-[10%] xl:top-[3%] xl:w-[360px] xl:h-[360px]
-          2xl:right-[20%] 2xl:top-[3%] 2xl:w-[420px] 2xl:h-[420px]
+          xl:right-[10%] xl:top-[3%] xl:w-[480px] xl:h-[480px]
+          2xl:right-[20%] 2xl:top-[3%] 2xl:w-[560px] 2xl:h-[560px]
           rounded-full overflow-hidden
         "
       >
@@ -128,48 +128,48 @@ export default function Home() {
       />
 
       {/* SECTION TAGLINES */}
-      <div className="mt-4 px-4 xl:px-10 2xl:px-16">
+      <div className="mt-4 px-4 xl:px-16 2xl:px-24">
         <h1
           ref={textOne}
-          className="text-3xl laptop:text-4xl xl:text-5xl 2xl:text-6xl 2xl:ml-160"
+          className="text-3xl laptop:text-4xl xl:text-7xl 2xl:text-8xl 2xl:ml-160"
         >
           {taglines[0]}
         </h1>
         <h1
           ref={textTwo}
-          className="text-3xl laptop:text-4xl xl:text-5xl 2xl:text-6xl 2xl:ml-160"
+          className="text-3xl laptop:text-4xl xl:text-7xl 2xl:text-8xl 2xl:ml-160"
         >
           {taglines[1]}
         </h1>
         <h1
           ref={textThree}
-          className="text-3xl laptop:text-4xl xl:text-5xl 2xl:text-6xl 2xl:ml-160"
+          className="text-3xl laptop:text-4xl xl:text-7xl 2xl:text-8xl 2xl:ml-160"
         >
           {taglines[2]}
         </h1>
         <h1
           ref={textFour}
-          className="text-3xl laptop:text-4xl xl:text-5xl 2xl:text-6xl 2xl:ml-160"
+          className="text-3xl laptop:text-4xl xl:text-7xl 2xl:text-8xl 2xl:ml-160"
         >
           {taglines[3]}
         </h1>
 
-        <Socials className="mt-5 2xl:ml-160" />
+        <Socials className="mt-5 xl:mt-8 xl:scale-125 xl:origin-left 2xl:ml-160" />
       </div>
 
       {/* RESTE DE LA PAGE */}
-      <div className="container mx-auto xl:max-w-6xl 2xl:max-w-screen-xl px-2 xl:px-8">
+      <div className="container mx-auto xl:max-w-7xl 2xl:max-w-screen-2xl px-2 xl:px-16 2xl:px-24">
 
         {/* PORTFOLIO */}
-        <div className="mt-10 p-2" ref={workRef}>
+        <div className="mt-10 xl:mt-20 p-2" ref={workRef}>
           <h1 className="sr-only">{t.nav.portfolio}</h1>
           <Portfolio lang={lang} />
         </div>
 
         {/* ABOUT */}
-        <div className="mt-10 pt-2 px-2 xl:px-4" ref={aboutRef}>
+        <div className="mt-10 xl:mt-20 pt-2 px-2 xl:px-4" ref={aboutRef}>
           <h1
-            className="text-3xl xl:text-4xl 2xl:text-5xl mb-10 px-2"
+            className="text-3xl xl:text-6xl 2xl:text-7xl mb-10 xl:mb-16 px-2"
             style={{
               fontFamily: "'Amsterdam', cursive",
               textDecoration: "underline",
@@ -178,9 +178,9 @@ export default function Home() {
             {t.sections.about}
           </h1>
 
-          <div className="text-xl xl:text-2xl 2xl:text-2xl max-w-2xl xl:max-w-4xl 2xl:max-w-5xl leading-relaxed xl:leading-loose">
+          <div className="text-xl xl:text-3xl 2xl:text-4xl max-w-2xl xl:max-w-5xl 2xl:max-w-6xl leading-relaxed xl:leading-loose 2xl:leading-loose">
             {aboutParagraphs.map((paragraph, index) => (
-              <p key={index} className="mb-3 xl:mb-5">
+              <p key={index} className="mb-3 xl:mb-8 2xl:mb-10">
                 {paragraph}
               </p>
             ))}
