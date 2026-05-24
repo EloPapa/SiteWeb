@@ -100,10 +100,9 @@ export default function Home() {
       </Head>
 
       {/* 🐶 MÉDAILLON CHIEN
-          480px * 0.85 = 408px
-          560px * 0.85 = 476px
-          px-16 (4rem) * 0.85 = 3.4rem
-          px-24 (6rem) * 0.85 = 5.1rem
+          lg  = 16" → taille modérée (≈ ancien xl −15%)
+          xl  = 24"+ → taille grande (valeurs XL actuelles)
+          2xl = très grand écran
       */}
       <div
         className="
@@ -112,7 +111,7 @@ export default function Home() {
           w-[120px] h-[120px]
           sm:w-[180px] sm:h-[180px]
           md:w-[280px] md:h-[280px]
-          lg:w-[280px] lg:h-[280px]
+          lg:right-[8%] lg:top-[3%] lg:w-[320px] lg:h-[320px]
           xl:right-[10%] xl:top-[3%] xl:w-[408px] xl:h-[408px]
           2xl:right-[20%] 2xl:top-[3%] 2xl:w-[476px] 2xl:h-[476px]
           rounded-full overflow-hidden
@@ -133,70 +132,56 @@ export default function Home() {
       />
 
       {/* SECTION TAGLINES
-          text-7xl (4.5rem) * 0.85 = 3.825rem → text-6xl (3.75rem) ≈ proche
-          text-8xl (6rem)   * 0.85 = 5.1rem   → text-7xl (4.5rem) ou [5.1rem]
-          px-16 * 0.85 = 3.4rem
-          px-24 * 0.85 = 5.1rem
-          mt-8  * 0.85 = ~mt-7
-          scale-125 → scale-110
+          lg  = 16" → text-5xl, padding modéré
+          xl  = 24" → text-[3.825rem], padding plus large
+          2xl = très grand → text-[5.1rem]
       */}
-      <div className="mt-4 px-4 xl:px-[3.4rem] 2xl:px-[5.1rem]">
+      <div className="mt-4 px-4 lg:px-8 xl:px-[3.4rem] 2xl:px-[5.1rem]">
         <h1
           ref={textOne}
-          className="text-3xl laptop:text-4xl xl:text-[3.825rem] 2xl:text-[5.1rem] 2xl:ml-160"
+          className="text-3xl laptop:text-4xl lg:text-5xl xl:text-[3.825rem] 2xl:text-[5.1rem] 2xl:ml-160"
         >
           {taglines[0]}
         </h1>
         <h1
           ref={textTwo}
-          className="text-3xl laptop:text-4xl xl:text-[3.825rem] 2xl:text-[5.1rem] 2xl:ml-160"
+          className="text-3xl laptop:text-4xl lg:text-5xl xl:text-[3.825rem] 2xl:text-[5.1rem] 2xl:ml-160"
         >
           {taglines[1]}
         </h1>
         <h1
           ref={textThree}
-          className="text-3xl laptop:text-4xl xl:text-[3.825rem] 2xl:text-[5.1rem] 2xl:ml-160"
+          className="text-3xl laptop:text-4xl lg:text-5xl xl:text-[3.825rem] 2xl:text-[5.1rem] 2xl:ml-160"
         >
           {taglines[2]}
         </h1>
         <h1
           ref={textFour}
-          className="text-3xl laptop:text-4xl xl:text-[3.825rem] 2xl:text-[5.1rem] 2xl:ml-160"
+          className="text-3xl laptop:text-4xl lg:text-5xl xl:text-[3.825rem] 2xl:text-[5.1rem] 2xl:ml-160"
         >
           {taglines[3]}
         </h1>
 
-        <Socials className="mt-5 xl:mt-7 xl:scale-110 xl:origin-left 2xl:ml-160" />
+        <Socials className="mt-5 lg:mt-6 lg:scale-110 lg:origin-left xl:mt-7 xl:scale-110 xl:origin-left 2xl:ml-160" />
       </div>
 
-      {/* RESTE DE LA PAGE
-          max-w-7xl → max-w-6xl (légèrement plus étroit)
-          px-16 * 0.85 = 3.4rem
-          px-24 * 0.85 = 5.1rem
-          mt-20 * 0.85 = mt-17 → mt-16
-      */}
-      <div className="container mx-auto xl:max-w-6xl 2xl:max-w-screen-xl px-2 xl:px-[3.4rem] 2xl:px-[5.1rem]">
+      {/* RESTE DE LA PAGE */}
+      <div className="container mx-auto lg:max-w-5xl xl:max-w-6xl 2xl:max-w-screen-xl px-2 lg:px-6 xl:px-[3.4rem] 2xl:px-[5.1rem]">
 
         {/* PORTFOLIO */}
-        <div className="mt-10 xl:mt-16 p-2" ref={workRef}>
+        <div className="mt-10 lg:mt-14 xl:mt-16 p-2" ref={workRef}>
           <h1 className="sr-only">{t.nav.portfolio}</h1>
           <Portfolio lang={lang} />
         </div>
 
         {/* ABOUT
-            text-6xl (3.75rem) * 0.85 = 3.1875rem → [3.2rem]
-            text-7xl (4.5rem)  * 0.85 = 3.825rem  → [3.825rem]
-            mb-16 * 0.85 = ~mb-14
-            text-3xl (1.875rem) * 0.85 = 1.6rem
-            text-4xl (2.25rem)  * 0.85 = 1.9rem
-            max-w-5xl → max-w-4xl
-            max-w-6xl → max-w-5xl
-            mb-8  * 0.85 = ~mb-7
-            mb-10 * 0.85 = ~mb-8
+            lg  = 16" → texte intermédiaire, largeur raisonnable
+            xl  = 24" → valeurs actuelles
+            2xl = très grand
         */}
-        <div className="mt-10 xl:mt-16 pt-2 px-2 xl:px-4" ref={aboutRef}>
+        <div className="mt-10 lg:mt-14 xl:mt-16 pt-2 px-2 xl:px-4" ref={aboutRef}>
           <h1
-            className="text-3xl xl:text-[3.2rem] 2xl:text-[3.825rem] mb-10 xl:mb-14 px-2"
+            className="text-3xl lg:text-4xl xl:text-[3.2rem] 2xl:text-[3.825rem] mb-10 lg:mb-12 xl:mb-14 px-2"
             style={{
               fontFamily: "'Amsterdam', cursive",
               textDecoration: "underline",
@@ -205,9 +190,9 @@ export default function Home() {
             {t.sections.about}
           </h1>
 
-          <div className="text-xl xl:text-[1.6rem] 2xl:text-[1.9rem] max-w-2xl xl:max-w-4xl 2xl:max-w-5xl leading-relaxed xl:leading-loose 2xl:leading-loose">
+          <div className="text-xl lg:text-2xl xl:text-[1.6rem] 2xl:text-[1.9rem] max-w-2xl lg:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl leading-relaxed lg:leading-relaxed xl:leading-loose 2xl:leading-loose">
             {aboutParagraphs.map((paragraph, index) => (
-              <p key={index} className="mb-3 xl:mb-7 2xl:mb-8">
+              <p key={index} className="mb-3 lg:mb-5 xl:mb-7 2xl:mb-8">
                 {paragraph}
               </p>
             ))}

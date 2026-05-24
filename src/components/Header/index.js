@@ -17,9 +17,8 @@ const ThemeButton = ({ darkMode, mounted, currentTheme, onToggle }) => {
   if (!darkMode || !mounted) return null;
   return (
     <Button onClick={onToggle}>
-      {/* h-9 (2.25rem) * 1.10 = 2.475rem ≈ h-10 */}
       <img
-        className="h-6 xl:h-10 cursor-default"
+        className="h-6 lg:h-8 xl:h-10 cursor-default"
         src={`/images/${currentTheme === "dark" ? "moon.svg" : "sun.svg"}`}
         alt="theme icon"
       />
@@ -78,12 +77,36 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
     paddingLeft: "0.5rem",
   };
 
-  // 2rem * 1.10 = 2.2rem
+  // lg = 16" 
+  const nameStyleLG = {
+    color: textColor,
+    fontFamily: "'Amsterdam', cursive",
+    fontSize: "1.65rem",
+    paddingLeft: "0.65rem",
+  };
+
+  // xl = 24"+
   const nameStyleXL = {
     color: textColor,
     fontFamily: "'Amsterdam', cursive",
     fontSize: "2.2rem",
     paddingLeft: "0.8rem",
+  };
+
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    const update = () => setWindowWidth(window.innerWidth);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  const getNameStyle = () => {
+    if (!mounted) return nameStyleDesktop;
+    if (windowWidth >= 1280) return nameStyleXL;
+    if (windowWidth >= 1024) return nameStyleLG;
+    return nameStyleDesktop;
   };
 
   return (
@@ -153,16 +176,10 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
                 <Button onClick={handlePortfolioScroll}>
                   {t.nav.portfolio}
                 </Button>
-
                 <Button onClick={handleAboutScroll}>
                   {t.nav.about}
                 </Button>
-
-                <Button
-                  onClick={() =>
-                    window.open("mailto:ericbergeron2000@gmail.com")
-                  }
-                >
+                <Button onClick={() => window.open("mailto:ericbergeron2000@gmail.com")}>
                   {t.nav.contact}
                 </Button>
               </div>
@@ -171,41 +188,34 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
         )}
       </Popover>
 
-      {/* 💻 DESKTOP */}
-      {/*
-        110px * 1.10 = 121px
-        130px * 1.10 = 143px
-        px-16 (4rem) * 1.10 = 4.4rem
-        px-24 (6rem) * 1.10 = 6.6rem
+      {/* 💻 DESKTOP
+          lg  = 16" : h-[95px], px-10
+          xl  = 24" : h-[121px], px-[4.4rem]
+          2xl       : h-[143px], px-[6.6rem]
       */}
       <div
         className="hidden tablet:flex justify-between items-center sticky top-0 z-10 w-full
-                    px-6 xl:px-[4.4rem] 2xl:px-[6.6rem]
-                    h-[75px] xl:h-[121px] 2xl:h-[143px]"
+                    px-6 lg:px-10 xl:px-[4.4rem] 2xl:px-[6.6rem]
+                    h-[75px] lg:h-[95px] xl:h-[121px] 2xl:h-[143px]"
         style={{
           background: gradient,
           color: textColor,
         }}
       >
-        {/* LEFT — nom + singe */}
-        {/*
-          gap-5 (1.25rem) * 1.10 = 1.375rem
-          80px * 1.10 = 88px
-          96px * 1.10 = 106px
+        {/* LEFT — nom + singe
+            lg  : gap-4, singe 68px
+            xl  : gap-[1.375rem], singe 88px
+            2xl : singe 106px
         */}
-        <div className="flex items-center gap-3 xl:gap-[1.375rem]">
+        <div className="flex items-center gap-3 lg:gap-4 xl:gap-[1.375rem]">
           <h1
             onClick={() => router.push("/")}
             className="font-medium cursor-default name"
-            style={
-              mounted && typeof window !== "undefined" && window.innerWidth >= 1280
-                ? nameStyleXL
-                : nameStyleDesktop
-            }
+            style={getNameStyle()}
           >
             {name}.
           </h1>
-          <div className="w-14 h-14 xl:w-[88px] xl:h-[88px] 2xl:w-[106px] 2xl:h-[106px] rounded-full overflow-hidden flex-shrink-0">
+          <div className="w-14 h-14 lg:w-[68px] lg:h-[68px] xl:w-[88px] xl:h-[88px] 2xl:w-[106px] 2xl:h-[106px] rounded-full overflow-hidden flex-shrink-0">
             <img
               src="/images/elo/singe.png"
               alt="singe"
@@ -214,46 +224,39 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
           </div>
         </div>
 
-        {/* RIGHT — boutons de navigation */}
-        {/*
-          gap-6 (1.5rem) * 1.10 = 1.65rem
-          gap-8 (2rem)   * 1.10 = 2.2rem
-          text-xl  (1.25rem) * 1.10 = 1.375rem
-          text-2xl (1.5rem)  * 1.10 = 1.65rem
+        {/* RIGHT — boutons
+            lg  : text-lg, gap-4
+            xl  : text-[1.375rem], gap-[1.65rem]
+            2xl : text-[1.65rem], gap-[2.2rem]
         */}
-        <div className="flex items-center gap-3 xl:gap-[1.65rem] 2xl:gap-[2.2rem]">
+        <div className="flex items-center gap-3 lg:gap-4 xl:gap-[1.65rem] 2xl:gap-[2.2rem]">
           {!isBlog ? (
             <>
               <Button onClick={handlePortfolioScroll}>
-                <span className="xl:text-[1.375rem] 2xl:text-[1.65rem]">{t.nav.portfolio}</span>
+                <span className="lg:text-lg xl:text-[1.375rem] 2xl:text-[1.65rem]">{t.nav.portfolio}</span>
               </Button>
-
               <Button onClick={handleAboutScroll}>
-                <span className="xl:text-[1.375rem] 2xl:text-[1.65rem]">{t.nav.about}</span>
+                <span className="lg:text-lg xl:text-[1.375rem] 2xl:text-[1.65rem]">{t.nav.about}</span>
               </Button>
             </>
           ) : (
             <Button onClick={() => router.push("/")}>
-              <span className="xl:text-[1.375rem] 2xl:text-[1.65rem]">{t.nav.home}</span>
+              <span className="lg:text-lg xl:text-[1.375rem] 2xl:text-[1.65rem]">{t.nav.home}</span>
             </Button>
           )}
 
           {showResume && (
             <Button onClick={() => router.push("/resume")}>
-              <span className="xl:text-[1.375rem] 2xl:text-[1.65rem]">{t.nav.resume}</span>
+              <span className="lg:text-lg xl:text-[1.375rem] 2xl:text-[1.65rem]">{t.nav.resume}</span>
             </Button>
           )}
 
-          <Button
-            onClick={() =>
-              window.open("mailto:ericbergeron2000@gmail.com")
-            }
-          >
-            <span className="xl:text-[1.375rem] 2xl:text-[1.65rem]">{t.nav.contact}</span>
+          <Button onClick={() => window.open("mailto:ericbergeron2000@gmail.com")}>
+            <span className="lg:text-lg xl:text-[1.375rem] 2xl:text-[1.65rem]">{t.nav.contact}</span>
           </Button>
 
           <Button onClick={toggle}>
-            <span className="xl:text-[1.375rem] 2xl:text-[1.65rem]">{lang === "fr" ? "EN" : "FR"}</span>
+            <span className="lg:text-lg xl:text-[1.375rem] 2xl:text-[1.65rem]">{lang === "fr" ? "EN" : "FR"}</span>
           </Button>
 
           <ThemeButton
