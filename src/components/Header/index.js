@@ -186,8 +186,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
       */}
       <div
         className="hidden tablet:flex justify-between items-center sticky top-0 z-10 w-full
-                    px-6 lg:px-[2.618rem] xl:px-[3.74rem] 2xl:px-[6.6rem]
-                    h-[75px] lg:h-[72px] xl:h-[103px] 2xl:h-[143px]"
+                    px-6 "
         style={{
           background: gradient,
           color: textColor,
