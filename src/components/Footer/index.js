@@ -28,10 +28,10 @@ const Footer = () => {
 
       {/* SECTION CONTACT */}
       <div className="w-full px-6 flex flex-col items-center text-center">
-        <h2 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl font-bold">
+        <h2 className="text-3xl tablet:text-4xl laptop:text-4xl laptopl:text-4xl font-bold">
           {t.sections.collaborate1}
         </h2>
-        <h2 className="text-3xl tablet:text-6xl laptop:text-4xl laptopl:text-6xl font-bold">
+        <h2 className="text-3xl tablet:text-4xl laptop:text-4xl laptopl:text-4xl font-bold">
           {t.sections.collaborate2}
         </h2>
         <div className="mt-6">
@@ -47,7 +47,7 @@ const Footer = () => {
         className="w-full mt-16 p-8 text-center"
         style={{ background: gradient }}
       >
-        <h3 className="text-sm tablet:text-6xl laptop:text-4xl laptopl:text-6xl font-bold">
+        <h3 className="text-sm tablet:text-2xl laptop:text-2xl laptopl:text-2xl font-bold">
           {t.footer.madeWith}{" "}
           <span className="underline underline-offset-2">Eloĩse</span>
         </h3>
