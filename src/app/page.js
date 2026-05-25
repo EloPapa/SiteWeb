@@ -100,10 +100,10 @@ export default function Home() {
       </Head>
 
       {/* 🐶 MÉDAILLON CHIEN
-          Valeurs lg réduites de 30% :
-            lg:w/h  : 243px * 0.70 = 170px
-            lg:right: 8% → inchangé (valeur relative)
-            lg:top  : 3% → inchangé (valeur relative)
+          xl réduites de 30% :
+            xl:w/h  : 347px * 0.70 = 243px
+            xl:right: 10% → inchangé (valeur relative)
+            xl:top  : 4%  → inchangé (valeur relative)
       */}
       <div
         className="
@@ -112,8 +112,8 @@ export default function Home() {
           w-[120px] h-[120px]
           sm:w-[180px] sm:h-[180px]
           md:w-[280px] md:h-[280px]
-          lg:right-[8%] lg:top-[3%] lg:w-[170px] lg:h-[170px]
-          xl:right-[10%] xl:top-[4%] xl:w-[347px] xl:h-[347px]
+          lg:right-[8%] lg:top-[3%] lg:w-[243px] lg:h-[243px]
+          xl:right-[10%] xl:top-[4%] xl:w-[243px] xl:h-[243px]
           2xl:right-[20%] 2xl:top-[5%] 2xl:w-[476px] 2xl:h-[476px]
           rounded-full overflow-hidden
         "
@@ -133,68 +133,70 @@ export default function Home() {
       />
 
       {/* SECTION TAGLINES
-          Valeurs lg réduites de 30% :
-            lg:text  : 2.275rem * 0.70 = 1.593rem
-            lg:px    : 2.02rem  * 0.70 = 1.414rem
+          xl réduites de 30% :
+            xl:text : 3.25rem  * 0.70 = 2.275rem
+            xl:px   : 2.89rem  * 0.70 = 2.023rem
       */}
-      <div className="mt-4 px-4 lg:px-[1.414rem] xl:px-[2.89rem] 2xl:px-[5.1rem]">
+      <div className="mt-4 px-4 lg:px-[2.02rem] xl:px-[2.023rem] 2xl:px-[5.1rem]">
         <h1
           ref={textOne}
-          className="text-3xl laptop:text-4xl lg:text-[1.593rem] xl:text-[3.25rem] 2xl:text-[5.1rem] 2xl:ml-160"
+          className="text-3xl laptop:text-4xl lg:text-[2.275rem] xl:text-[2.275rem] 2xl:text-[5.1rem] 2xl:ml-160"
         >
           {taglines[0]}
         </h1>
         <h1
           ref={textTwo}
-          className="text-3xl laptop:text-4xl lg:text-[1.593rem] xl:text-[3.25rem] 2xl:text-[5.1rem] 2xl:ml-160"
+          className="text-3xl laptop:text-4xl lg:text-[2.275rem] xl:text-[2.275rem] 2xl:text-[5.1rem] 2xl:ml-160"
         >
           {taglines[1]}
         </h1>
         <h1
           ref={textThree}
-          className="text-3xl laptop:text-4xl lg:text-[1.593rem] xl:text-[3.25rem] 2xl:text-[5.1rem] 2xl:ml-160"
+          className="text-3xl laptop:text-4xl lg:text-[2.275rem] xl:text-[2.275rem] 2xl:text-[5.1rem] 2xl:ml-160"
         >
           {taglines[2]}
         </h1>
         <h1
           ref={textFour}
-          className="text-3xl laptop:text-4xl lg:text-[1.593rem] xl:text-[3.25rem] 2xl:text-[5.1rem] 2xl:ml-160"
+          className="text-3xl laptop:text-4xl lg:text-[2.275rem] xl:text-[2.275rem] 2xl:text-[5.1rem] 2xl:ml-160"
         >
           {taglines[3]}
         </h1>
 
-        {/* Valeurs lg réduites de 30% :
-              lg:mt   : 1.05rem * 0.70 = 0.735rem
+        {/* xl réduites de 30% :
+              xl:mt    : 1.5rem   * 0.70 = 1.05rem
+              xl:scale : 0.935   * 0.70 = 0.6545 → arrondi 0.655
         */}
-        <Socials className="mt-5 lg:mt-[0.735rem] lg:origin-left xl:mt-[1.5rem] xl:scale-[0.935] xl:origin-left 2xl:ml-160" />
+        <Socials className="mt-5 lg:mt-[1.05rem] lg:origin-left xl:mt-[1.05rem] xl:scale-[0.655] xl:origin-left 2xl:ml-160" />
       </div>
 
       {/* RESTE DE LA PAGE
-          Valeurs lg réduites de 30% :
-            lg:px : 2.02rem * 0.70 = 1.414rem
+          xl réduites de 30% :
+            xl:px : 2.89rem * 0.70 = 2.023rem
       */}
-      <div className="container mx-auto lg:max-w-3xl xl:max-w-5xl 2xl:max-w-screen-xl px-2 lg:px-[1.414rem] xl:px-[2.89rem] 2xl:px-[5.1rem]">
+      <div className="container mx-auto lg:max-w-3xl xl:max-w-5xl 2xl:max-w-screen-xl px-2 lg:px-[2.02rem] xl:px-[2.023rem] 2xl:px-[5.1rem]">
 
         {/* PORTFOLIO
-            Valeurs lg réduites de 30% :
-              lg:mt : 2.275rem * 0.70 = 1.593rem
+            xl réduites de 30% :
+              xl:mt : 3.25rem * 0.70 = 2.275rem
         */}
-        <div className="mt-10 lg:mt-[1.593rem] xl:mt-[3.25rem] p-2" ref={workRef}>
+        <div className="mt-10 lg:mt-[2.275rem] xl:mt-[2.275rem] p-2" ref={workRef}>
           <h1 className="sr-only">{t.nav.portfolio}</h1>
           <Portfolio lang={lang} />
         </div>
 
         {/* ABOUT
-            Valeurs lg réduites de 30% :
-              lg:mt     (section) : 2.275rem * 0.70 = 1.593rem
-              lg:text   (titre)   : 1.904rem * 0.70 = 1.333rem
-              lg:mb     (titre)   : 2.08rem  * 0.70 = 1.456rem
-              lg:text   (corps)   : 1rem     * 0.70 = 0.7rem  → plancher 0.75rem
-              lg:mb     (§)       : 1.05rem  * 0.70 = 0.735rem
+            xl réduites de 30% :
+              xl:mt   (section) : 3.25rem  * 0.70 = 2.275rem
+              xl:text (titre)   : 2.72rem  * 0.70 = 1.904rem
+              xl:mb   (titre)   : 2.975rem * 0.70 = 2.083rem
+              xl:px   (section) : 4 (1rem) * 0.70 = 0.70rem → plancher 0.75rem
+              xl:text (corps)   : 1.36rem  * 0.70 = 0.952rem
+              xl:mb   (§)       : 1.5rem   * 0.70 = 1.05rem
         */}
-        <div className="mt-10 lg:mt-[1.593rem] xl:mt-[3.25rem] pt-2 px-2 xl:px-4" ref={aboutRef}>
+        <div className="mt-10 lg:mt-[2.275rem] xl:mt-[2.275rem] pt-2 px-2 xl:px-[0.75rem]" ref={aboutRef}>
           <h1
-            className="text-3xl lg:text-[1.333rem] xl:text-[2.72rem] 2xl:text-[3.825rem] mb-10 lg:mb-[1.456rem] xl:mb-[2.975rem] px-2"
+            className="text-3xl lg:text-[1.904rem] xl:text-[1.904rem] 2xl:text-[3.825rem] mb-10 lg:mb-[2.08rem] xl:mb-[2.083rem] px-2"
             style={{
               fontFamily: "'Amsterdam', cursive",
               textDecoration: "underline",
@@ -203,9 +205,9 @@ export default function Home() {
             {t.sections.about}
           </h1>
 
-          <div className="text-xl lg:text-[0.75rem] xl:text-[1.36rem] 2xl:text-[1.9rem] max-w-2xl lg:max-w-2xl xl:max-w-4xl 2xl:max-w-5xl leading-relaxed xl:leading-loose 2xl:leading-loose">
+          <div className="text-xl lg:text-[1rem] xl:text-[0.952rem] 2xl:text-[1.9rem] max-w-2xl lg:max-w-2xl xl:max-w-4xl 2xl:max-w-5xl leading-relaxed xl:leading-loose 2xl:leading-loose">
             {aboutParagraphs.map((paragraph, index) => (
-              <p key={index} className="mb-3 lg:mb-[0.735rem] xl:mb-[1.5rem] 2xl:mb-8">
+              <p key={index} className="mb-3 lg:mb-[1.05rem] xl:mb-[1.05rem] 2xl:mb-8">
                 {paragraph}
               </p>
             ))}
