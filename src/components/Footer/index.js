@@ -31,7 +31,7 @@ const Footer = () => {
         <h2 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl font-bold">
           {t.sections.collaborate1}
         </h2>
-        <h2 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl font-bold">
+        <h2 className="text-3xl tablet:text-6xl laptop:text-4xl laptopl:text-6xl font-bold">
           {t.sections.collaborate2}
         </h2>
         <div className="mt-6">
@@ -47,7 +47,7 @@ const Footer = () => {
         className="w-full mt-16 p-8 text-center"
         style={{ background: gradient }}
       >
-        <h3 className="text-sm font-bold">
+        <h3 className="text-sm tablet:text-6xl laptop:text-4xl laptopl:text-6xl font-bold">
           {t.footer.madeWith}{" "}
           <span className="underline underline-offset-2">Eloĩse</span>
         </h3>
