@@ -111,7 +111,7 @@ export default function Home() {
           right-[5%] top-[9%]
           w-[120px] h-[120px]
           sm:w-[180px] sm:h-[180px]
-          md:w-[280px] md:h-[280px]
+          md:w-[280px] md:top-[3%] md:h-[280px]
           lg:right-[8%] lg:top-[3%] lg:w-[243px] lg:h-[243px]
           xl:right-[10%] xl:top-[4%] xl:w-[243px] xl:h-[243px]
           2xl:right-[20%] 2xl:top-[5%] 2xl:w-[476px] 2xl:h-[476px]
@@ -180,7 +180,7 @@ export default function Home() {
             xl réduites de 30% :
               xl:mt : 3.25rem * 0.70 = 2.275rem
         */}
-        <div className="mt-10 lg:mt-[2.275rem] xl:mt-[2.275rem] p-2" ref={workRef}>
+        <div className="mt-10 lg:mt-[2.275rem] xl:mt-[2rem] p-2" ref={workRef}>
           <h1 className="sr-only">{t.nav.portfolio}</h1>
           <Portfolio lang={lang} />
         </div>
