@@ -83,7 +83,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
     color: textColor,
     fontFamily: "'Amsterdam', cursive",
     fontSize: "1.309rem",
-    paddingLeft: "0.48rem",
+    paddingLeft: "0.5rem",
   };
 
   // xl = 22"+ : inchangé
@@ -91,7 +91,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
     color: textColor,
     fontFamily: "'Amsterdam', cursive",
     fontSize: "1.87rem",
-    paddingLeft: "0.68rem",
+    paddingLeft: "0.5rem",
   };
 
   const [windowWidth, setWindowWidth] = useState(0);
