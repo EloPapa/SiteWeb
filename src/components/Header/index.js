@@ -180,13 +180,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handlePortfolioScroll, is
       </Popover>
 
       {/* 💻 DESKTOP
-          lg = 15"–22" : xl(103px) * 0.70 = 72px | xl(3.74rem) * 0.70 = 2.618rem
-          xl = 22"+ : inchangé 103px, 3.74rem
-          2xl : inchangé
+          
       */}
       <div
         className="hidden tablet:flex justify-between items-center sticky top-0 z-10 w-full
-                    px-6 "
+                    px-6 h-[75px]"
         style={{
           background: gradient,
           color: textColor,
